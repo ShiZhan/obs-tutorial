@@ -1,3 +1,4 @@
 minio.exe
+config.json
+certs/
 root/
-!do_not_delete
