@@ -43,7 +43,7 @@ Option 2 & 3 are more general and versatile, both are widely used for various ob
 ### References
 
 * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
-* COSBench: A Benchmark Tool for Cloud Object Storage Services <https://www.techrepublic.com/resource-library/whitepapers/cosbench-a-benchmark-tool-for-cloud-object-storage-services/> <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
+* COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
 * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
 # Basic Functionality
