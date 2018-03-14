@@ -43,8 +43,11 @@ For those who want to run Swift or Ceph in docker, refer to Docker tutorial <htt
     * Option 1: Minio Client <https://docs.minio.io/docs/minio-client-quickstart-guide>
     * Option 2: s3cmd <https://github.com/s3tools/s3cmd>
         * run `pip install s3cmd` in python environment
+        * Configure for Minio <https://docs.minio.io/docs/s3cmd-with-minio>
     * Option 3: aws-shell <https://github.com/awslabs/aws-shell>
         * run `pip install aws-shell` in python environment
+        * Configure for Minio <https://docs.minio.io/docs/aws-cli-with-minio>
+        * Official Manual <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
 * APIs:
     * Option 4: [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/)
     * Option 5: [boto](https://github.com/boto/boto3)
