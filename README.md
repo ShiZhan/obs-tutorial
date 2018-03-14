@@ -6,22 +6,19 @@ Object Storage Tutorial, use [Minio](https://minio.io/) as Guide for Newbies.
 
 ## Object Storage Server
 
-* Minio: download latest version from <https://minio.io/downloads.html>.
+* Object Storage for Beginners:
+    * Option 1: [Minio](https://minio.io/), latest version <https://minio.io/downloads.html>.
 * Experimental Mock Servers:
-    * [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**.
-    * [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
-    * [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**. 
-    * [s3mock](https://github.com/findify/s3mock), S3 mock library for Java/Scala. **Java/SBT Building is required**.
-    * [S3Mock](https://github.com/adobe/S3Mock), S3 mock as Docker image or JUnit rule. **Java/Maven Building is required**, contributed by Adobe(c).
+    * Option 2: [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**, the Origin.
+    * Option 3: [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
+    * Option 4: [s3mock](https://github.com/findify/s3mock), S3 mock library for Java/Scala. **Java/SBT Building is required**.
+    * Option 5: [S3Mock](https://github.com/adobe/S3Mock), S3 mock as Docker image or JUnit rule. **Java/Maven Building is required**, contributed by Adobe (c).
+    * Option 6: [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**, use Java/Maven to build.
 * Industry Level Projects:
-    * Option 1: [Openstack Swift](https://wiki.openstack.org/wiki/Swift)
-        * All-in-one container: <https://github.com/cs-course/openstack-swift-docker>
-    * Option 2: [Ceph](https://ceph.com/)
-        * Docker files and images to run Ceph in containers: <https://github.com/ceph/ceph-container>
+    * Option 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift), fast deployment by All-in-one container: <https://github.com/cs-course/openstack-swift-docker>.
+    * Option 8: [Ceph](https://ceph.com/), docker files and images to run Ceph in containers: <https://github.com/ceph/ceph-container>.
 
-### A brief tutorial on container
-
-* Docker tutorial <https://github.com/cs-course/docker-tutorial>
+For those who want to run Swift or Ceph in containers, refer to Docker tutorial <https://github.com/cs-course/docker-tutorial>.
 
 ## Object Storage Client
 
@@ -30,6 +27,7 @@ Object Storage Tutorial, use [Minio](https://minio.io/) as Guide for Newbies.
     * run `pip install s3cmd` in python environment
 * Option 3: aws-shell <https://github.com/awslabs/aws-shell>
     * run `pip install aws-shell` in python environment
+* Other options: [boto](https://github.com/boto/boto3), [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/), ...
 
 Option 2 & 3 are more general and versatile, both are widely used for various object storage services.
 
@@ -42,13 +40,16 @@ Option 2 & 3 are more general and versatile, both are widely used for various ob
 * Option 3: Python Docker <https://github.com/Zhan2012/python-lab>
     * `docker login daocloud.io && docker pull daocloud.io/zhan2016/python-lab:master-31a932d`
 
-### Using Python as Lab Platform
+### How to establish Java Environment
 
-* Jupyter Notebook Tutorial <https://github.com/cs-course/jupyter-tutorial>
+Java Programming, [2017-2018 2nd semester](http://jwc.hust.edu.cn/info/1161/6122.htm).
 
 ## Object Storage Benchmark
 
 * COSBench <https://github.com/intel-cloud/cosbench>
+    * User Guide <https://github.com/open-io/cosbench/raw/master/COSBenchUserGuide.pdf>.
+    * Example workload <./minio-workload-example.xml>.
+    * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
 
 ### References
 
@@ -69,6 +70,32 @@ In computer programming, [create, read, update, and delete (as an acronym CRUD)]
 
 # Evaluation
 
-Throughput, Latency under different object size, server total.
+*Throughput*, *Latency* under different *object size*, *concurrency*, *server total*.
+
+Suggested topics:
+
+* How object size affects performance?
+    * for a particular application, is there a best way to fit into OBS?
+* The main factors behind I/O latency?
+    * Get latency distribution first.
+* What will happen when clients are crowded?
+* Why tests '**fail**'? (not terminate)
+* The outcome of scaling out (putting more servers into system)?
+
+More insights are encouraged.
+
+## Further thoughts
+
+* How to do these experiments on your own codes (besides COSBench)?
+* Using Python as Lab Platform
+    * Jupyter Notebook Tutorial <https://github.com/cs-course/jupyter-tutorial>
+
+# Future Readings
+
+SNIA on Storage <http://sniablog.org/category/object-storage/>.
+
+SNIA [Object Storage 101](http://www.snia.org/sites/default/files/Object_Storage_101.pdf), [Object Storage 201](https://www.snia.org/sites/default/files/Object_Storage_201_Final_1.pdf) and [Object Storage Technology](http://www.snia.org/sites/default/education/tutorials/2013/spring/file/BrentWelch_Object_Storage_Technology.pdf).
+
+Enterprise level [Object Store comparison](http://gaul.org/object-store-comparison/).
 
 Zhan.Shi @ 2018
