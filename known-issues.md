@@ -8,15 +8,15 @@ And open issues <https://github.com/minio/minio/issues>.
 
 ## COSBench
 
-1. For JDK deployment, portal to [Oracle official sites](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html)
+1. For JDK deployment, portal to [Oracle official sites](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html).
     * Linux: download dpk for Debian/Ubuntu, rpm for CentOS, as for the latter, simply run `rpm -ivh <downloaded jdk rpm package>`.
     * Windows: download installation package and run.
     * Some references <https://github.com/Zhan2012/java-bundle>
 
-2. In [COSBench release page](https://github.com/intel-cloud/cosbench/releases), choose version rather than release version
+2. In [COSBench release page](https://github.com/intel-cloud/cosbench/releases), choose release candidate rather than final release (require manual compilation).
     * refer to [open-io's choice](https://github.com/open-io/cosbench/releases).
     * download zip file for running directly without compilation.
-    * If you are familiar with Java, clone the repo and build for yourself.
+    * If you are familiar with Java, clone the repo and build from the latest source for yourself.
 
 3. COSBench scripts
     * Use `start-all.sh` to run and `stop-all.sh` to stop.
