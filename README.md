@@ -18,37 +18,44 @@ Object Storage Tutorial, use [Minio](https://minio.io/) as Guide for Newbies.
     * Option 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift), fast deployment by All-in-one container: <https://github.com/cs-course/openstack-swift-docker>.
     * Option 8: [Ceph](https://ceph.com/), docker files and images to run Ceph in containers: <https://github.com/ceph/ceph-container>.
 
-For those who want to run Swift or Ceph in containers, refer to Docker tutorial <https://github.com/cs-course/docker-tutorial>.
+### How to run servers within docker container
 
-## Object Storage Client
-
-* Option 1: Minio Client <https://docs.minio.io/docs/minio-client-quickstart-guide>
-* Option 2: s3cmd <https://github.com/s3tools/s3cmd>
-    * run `pip install s3cmd` in python environment
-* Option 3: aws-shell <https://github.com/awslabs/aws-shell>
-    * run `pip install aws-shell` in python environment
-* Other options: [boto](https://github.com/boto/boto3), [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/), ...
-
-Option 2 & 3 are more general and versatile, both are widely used for various object storage services.
+For those who want to run Swift or Ceph in docker, refer to Docker tutorial <https://github.com/cs-course/docker-tutorial>.
 
 ### How to establish Python Environment
 
-* Option 1: [Anaconda](https://www.anaconda.com/)
-    * Download from <https://repo.continuum.io/archive/Anaconda3-5.1.0-Windows-x86_64.exe> & install
-* Option 2: [WinPython](http://winpython.github.io/)
-    * Download from <https://sourceforge.net/projects/winpython/files/WinPython_3.6/3.6.3.0/> & install
-* Option 3: Python Docker <https://github.com/Zhan2012/python-lab>
-    * `docker login daocloud.io && docker pull daocloud.io/zhan2016/python-lab:master-31a932d`
+* Python Distributions:
+    * Option 1: [Anaconda](https://www.anaconda.com/)
+        * Download from <https://repo.continuum.io/archive/Anaconda3-5.1.0-Windows-x86_64.exe> & install
+    * Option 2: [WinPython](http://winpython.github.io/)
+        * Download from <https://sourceforge.net/projects/winpython/files/WinPython_3.6/3.6.3.0/> & install
+* Fast deployment by docker:
+    * Option 3: Python Docker <https://github.com/Zhan2012/python-lab>
+        * `docker login daocloud.io && docker pull daocloud.io/zhan2016/python-lab:master-31a932d`
 
 ### How to establish Java Environment
 
-Java Programming, [2017-2018 2nd semester](http://jwc.hust.edu.cn/info/1161/6122.htm).
+**Ongoing course**: Java Programming, [2017-2018 2nd semester](http://jwc.hust.edu.cn/info/1161/6122.htm).
+
+## Object Storage Client
+
+* Standalone Utilities:
+    * Option 1: Minio Client <https://docs.minio.io/docs/minio-client-quickstart-guide>
+    * Option 2: s3cmd <https://github.com/s3tools/s3cmd>
+        * run `pip install s3cmd` in python environment
+    * Option 3: aws-shell <https://github.com/awslabs/aws-shell>
+        * run `pip install aws-shell` in python environment
+* APIs:
+    * Option 4: [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/)
+    * Option 5: [boto](https://github.com/boto/boto3)
+
+Option 2 & 3 are more general and versatile, both are widely used for various object storage services.
 
 ## Object Storage Benchmark
 
 * COSBench <https://github.com/intel-cloud/cosbench>
     * User Guide <https://github.com/open-io/cosbench/raw/master/COSBenchUserGuide.pdf>.
-    * Example workload <./minio-workload-example.xml>.
+    * Example workload <https://github.com/Zhan2012/obs-tutorial/raw/master/minio-workload-example.xml>.
     * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
 
 ### References
