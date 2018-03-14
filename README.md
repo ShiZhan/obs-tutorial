@@ -8,8 +8,11 @@ Object Storage Tutorial, use [Minio](https://minio.io/) as Guide for Newbies.
 
 * Minio: download latest version from <https://minio.io/downloads.html>.
 * Experimental Mock Servers:
-    * Option 1: A Python clone of fake-s3, A lightweight server clone of Amazon S3 <https://github.com/jserver/mock-s3>.
-    * Option 2: S3 mock library for Java/Scala <https://github.com/findify/s3mock>.
+    * [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**.
+    * [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
+    * [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**. 
+    * [s3mock](https://github.com/findify/s3mock), S3 mock library for Java/Scala. **Java/SBT Building is required**.
+    * [S3Mock](https://github.com/adobe/S3Mock), S3 mock as Docker image or JUnit rule. **Java/Maven Building is required**, contributed by Adobe(c).
 * Industry Level Projects:
     * Option 1: [Openstack Swift](https://wiki.openstack.org/wiki/Swift)
         * All-in-one container: <https://github.com/cs-course/openstack-swift-docker>
