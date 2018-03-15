@@ -10,7 +10,7 @@
       <work type="init" workers="1" config="cprefix=s3miniotest;containers=r(1,8)" />
     </workstage>
 
-	<workstage name="prepare">
+    <workstage name="prepare">
       <work type="prepare" workers="8" config="cprefix=s3miniotest;containers=r(1,1);objects=r(1,8);sizes=c(8)KB" />
       <work type="prepare" workers="8" config="cprefix=s3miniotest;containers=r(2,2);objects=r(1,8);sizes=c(16)KB" />
       <work type="prepare" workers="8" config="cprefix=s3miniotest;containers=r(3,3);objects=r(1,8);sizes=c(32)KB" />
