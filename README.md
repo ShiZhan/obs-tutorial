@@ -4,32 +4,16 @@ Object Storage Tutorial.
 
 ## Basic Concept
 
-SNIA[^1] Tutorials on Object Storage:
+SNIA Tutorials on Object Storage:
 * [Object Storage 101](http://www.snia.org/sites/default/files/Object_Storage_101.pdf)
 * [Object Storage 201](https://www.snia.org/sites/default/files/Object_Storage_201_Final_1.pdf)
 * [Object Storage Technology](http://www.snia.org/sites/default/education/tutorials/2013/spring/file/BrentWelch_Object_Storage_Technology.pdf).
 
-[^1]: The **Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) is a not–for–profit global organization, made up of member companies spanning the global storage market.
+The **Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) is a not–for–profit global organization, made up of member companies spanning the global storage market.
 
 # Preparation
 
-## Object Storage Server
-
-* Object Storage for Beginners:
-    * Option 1: [Minio](https://minio.io/), latest version <https://minio.io/downloads.html>.
-* Experimental Mock Servers:
-    * Option 2: [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**, the Origin.
-    * Option 3: [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
-    * Option 4: [s3mock](https://github.com/findify/s3mock), S3 mock library for Java/Scala. **Java/SBT Building is required**.
-    * Option 5: [S3Mock](https://github.com/adobe/S3Mock), S3 mock as Docker image or JUnit rule. **Java/Maven Building is required**, contributed by Adobe (c).
-    * Option 6: [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**, use Java/Maven to build.
-* Industry Level Projects:
-    * Option 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift), fast deployment by All-in-one container: <https://github.com/cs-course/openstack-swift-docker>.
-    * Option 8: [Ceph](https://ceph.com/), docker files and images to run Ceph in containers: <https://github.com/ceph/ceph-container>.
-
-### How to run servers within docker container
-
-For those who want to run Swift or Ceph in docker, refer to Docker tutorial <https://github.com/cs-course/docker-tutorial>.
+## Environment
 
 ### How to establish Python Environment
 
@@ -44,7 +28,33 @@ For those who want to run Swift or Ceph in docker, refer to Docker tutorial <htt
 
 ### How to establish Java Environment
 
-**Ongoing course**: Java Programming, [2017-2018 2nd semester](http://jwc.hust.edu.cn/info/1161/6122.htm).
+**Ongoing course**: Java Programming, [2017-2018 2nd semester](http://jwc.hust.edu.cn/info/1161/6122.htm), just follow your teacher's guide.
+
+Installation helper scripts <https://github.com/Zhan2012/java-bundle> (_**For adventurers**_).
+
+### Git and Github (_**Recommended**_)
+
+Git tutorial <https://github.com/cs-course/git-tutorial>.
+
+For those who want unlimited private repositories, try [bitbucket](https://bitbucket.org/).
+
+### How to run servers within docker container (_**Optional**_)
+
+For those who want to run Openstack Swift or Ceph in docker, refer to Docker tutorial <https://github.com/cs-course/docker-tutorial>.
+
+## Object Storage Server
+
+* Object Storage for Beginners:
+    * Option 1: [Minio](https://minio.io/), latest version <https://minio.io/downloads.html>.
+* Experimental Mock Servers:
+    * Option 2: [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**, the Origin.
+    * Option 3: [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
+    * Option 4: [s3mock](https://github.com/findify/s3mock), S3 mock library for Java/Scala. **Java/SBT Building is required**.
+    * Option 5: [S3Mock](https://github.com/adobe/S3Mock), S3 mock as Docker image or JUnit rule. **Java/Maven Building is required**, contributed by Adobe (c).
+    * Option 6: [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**, use Java/Maven to build.
+* Industry Level Projects:
+    * Option 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift), fast deployment by All-in-one container: <https://github.com/cs-course/openstack-swift-docker>.
+    * Option 8: [Ceph](https://ceph.com/), docker files and images to run Ceph in containers: <https://github.com/ceph/ceph-container>.
 
 ## Object Storage Client
 
