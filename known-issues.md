@@ -48,3 +48,13 @@ And open issues <https://github.com/minio/minio/issues>.
     * "Stat: completed": Succ-Ratio >= 80%
     * "Stat: Failed": Succ-Ratio < 80%
     * For failed requests, check `workload.log` in `cosbench/archive/w[dd]-[workload name]`, usually bad checksum.
+
+## s3proxy
+
+1. To work with latest s3cmd and aws-shell, authorization should be disabled: `s3proxy.authorization=none`
+    * TODO: make authorization compatible with s3v4
+
+2. Windows: incorrect folder access, 'mb' may work, but with wrong properties, which prevent further operations like cp/put
+    * TODO: correct folder creation
+    * No 'official' support for Windows 
+
