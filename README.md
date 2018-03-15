@@ -1,6 +1,15 @@
 # Introduction
 
-Object Storage Tutorial, use [Minio](https://minio.io/) as Guide for Newbies.
+Object Storage Tutorial.
+
+## Basic Concept
+
+SNIA[^1] Tutorials on Object Storage:
+* [Object Storage 101](http://www.snia.org/sites/default/files/Object_Storage_101.pdf)
+* [Object Storage 201](https://www.snia.org/sites/default/files/Object_Storage_201_Final_1.pdf)
+* [Object Storage Technology](http://www.snia.org/sites/default/education/tutorials/2013/spring/file/BrentWelch_Object_Storage_Technology.pdf).
+
+[^1]: The **Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) is a not–for–profit global organization, made up of member companies spanning the global storage market.
 
 # Preparation
 
@@ -102,9 +111,7 @@ More insights are encouraged.
 
 # Future Readings
 
-SNIA on Storage <http://sniablog.org/category/object-storage/>.
-
-SNIA [Object Storage 101](http://www.snia.org/sites/default/files/Object_Storage_101.pdf), [Object Storage 201](https://www.snia.org/sites/default/files/Object_Storage_201_Final_1.pdf) and [Object Storage Technology](http://www.snia.org/sites/default/education/tutorials/2013/spring/file/BrentWelch_Object_Storage_Technology.pdf).
+Recent SNIA blog posts on Object Storage <http://sniablog.org/category/object-storage/>.
 
 Enterprise level [Object Store comparison](http://gaul.org/object-store-comparison/).
 
