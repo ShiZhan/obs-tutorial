@@ -49,6 +49,7 @@ For those who want to run Openstack Swift or Ceph in docker, refer to Docker tut
 * Experimental Mock Servers:
     * Option 2: [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**, the Origin.
     * Option 3: [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
+        * Option 3.1: **Python 3 ready, maybe BUGGY** <https://github.com/Zhan2012/mock-s3>.
     * Option 4: [s3mock](https://github.com/findify/s3mock), S3 mock library for Java/Scala. **Java/SBT Building is required**.
     * Option 5: [S3Mock](https://github.com/adobe/S3Mock), S3 mock as Docker image or JUnit rule. **Java/Maven Building is required**, contributed by Adobe (c).
     * Option 6: [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**, use Java/Maven to build.

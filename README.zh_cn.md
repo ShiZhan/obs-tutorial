@@ -49,6 +49,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
 * 实验性模拟服务程序:
     * 选项 2: [fake-s3](https://github.com/jubos/fake-s3)，Amazon S3轻量级模仿。**需要Ruby**，首个S3克隆项目。
     * 选项 3: [mock-s3](https://github.com/jserver/mock-s3)，用Python重写fake-s3。**需要Python 2.7**。
+        * 选项 3.1: **Python 3 移植(测试)版** <https://github.com/Zhan2012/mock-s3>。
     * 选项 4: [s3mock](https://github.com/findify/s3mock)，用Java/Scala实现S3模拟。**需要用Java/SBT构建**。
     * 选项 5: [S3Mock](https://github.com/adobe/S3Mock)，可以放进Docker容器或者JUnit规则的S3模拟。**需要用Java/SBT构建**，由Adobe (c)推出。
     * 选项 6: [s3proxy](https://github.com/gaul/s3proxy)，为各类存储提供S3 API。**预编译包[猛击此处](https://github.com/gaul/s3proxy/releases)**，或者可以自己用Java/Maven构建。
@@ -96,7 +97,6 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
 | Read (Retrieve)  | SELECT | GET                |
 | Update (Modify)  | UPDATE | PUT / POST / PATCH |
 | Delete (Destroy) | DELETE | DELETE             |
-
 
 # 评测
 
