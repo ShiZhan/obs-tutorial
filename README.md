@@ -76,7 +76,7 @@ Option 2 & 3 are more general and versatile, both are widely used for various ob
 ## Object Storage Benchmark
 
 * COSBench <https://github.com/intel-cloud/cosbench>
-    * User Guide <https://github.com/open-io/cosbench/raw/master/COSBenchUserGuide.pdf>.
+    * User Guide <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>.
     * Example workload <https://github.com/Zhan2012/obs-tutorial/raw/master/minio-workload-example.xml>.
     * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
 

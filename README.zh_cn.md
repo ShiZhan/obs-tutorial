@@ -76,7 +76,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
 ## 对象存储评测工具
 
 * COSBench <https://github.com/intel-cloud/cosbench>
-    * 指南 <https://github.com/open-io/cosbench/raw/master/COSBenchUserGuide.pdf>。
+    * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>。
     * 负载范例 <https://github.com/Zhan2012/obs-tutorial/raw/master/minio-workload-example.xml>。
     * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>。
 
