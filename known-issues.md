@@ -52,9 +52,17 @@ And open issues <https://github.com/minio/minio/issues>.
 ## s3proxy
 
 1. To work with latest s3cmd and aws-shell, authorization should be disabled: `s3proxy.authorization=none`
-    * TODO: make authorization compatible with s3v4
+    * No authorization, not for practical use.
+    * TODO: make authorization compatible with s3v4.
 
 2. Windows: incorrect folder access, 'mb' may work, but with wrong properties, which prevent further operations like cp/put
-    * TODO: correct folder creation
-    * No 'official' support for Windows 
+    * No 'official' support for Windows, possible cause: unsupported file system metadata operation
+    * TODO: store metadata separately, like mock-s3.
+
+## mock-s3
+
+1. Python 2.7 restricted.
+    * Python 3 migration in progress, maybe BUGGY.
+
+2. No authorization, not for practical use.
 
