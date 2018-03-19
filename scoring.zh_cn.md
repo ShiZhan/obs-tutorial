@@ -1,28 +1,28 @@
-# How to Score
+# 如何得分
 
-| Component  | BASIC             | ADVANCED <sup>1</sup>  | HARD <sup>2</sup>   |
+| 组成部分    | 基础               | 进阶 <sup>1</sup>       | 困难 <sup>2</sup>   |
 | :---       | :---              | :---                   | :---                |
 | Server     | Minio Server      | s3proxy/s3mock/mock-s3 | Swift/Ceph          |
 | Client     | Minio Client      | s3cmd/aws-{cli|shell}  | awssdk/boto3        |
-| Benchmark  | workload-sample   | select research topic  | programmed research |
+| Benchmark  | 预置负载范例        | 选题测试研究             | 编制实验程序研究       |
 
-1. **Limited in-class help**, with complete on-line resource provided in this repository.
-2. **Please advanture by yourself** beyond portals from this repository.
+1. **有限课堂帮助**，同时在本程序库内提供全套在线资源。
+2. 超过本程序库所提供导引之外部分 **请自己探索**。
 
-# Submiting your report
+# 报告提交
 
-## Methods
+## 方法
 
-* Electronic version: Github, create your own accounts first.
-* Paper version: Class Monitor
+* 电子版: Github，先创建自己账号（首次课程包含）。
+* 纸质版: 请班长收集
 
-## Important Dates
+## 重要日期
 
-Submission Date: **2018-04-23**
+提交日期: **2018-04-23**
 
-## Late Submission
+## 延迟提交
 
-Refer to:
+参考:
 
 1. [cs231n assignments](http://vision.stanford.edu/teaching/cs231n/assignments.html)
 2. [EE365: Late Policy](https://stanford.edu/class/ee365/late.html)
@@ -30,6 +30,6 @@ Refer to:
 4. [Penalties for Late Hand In](http://www.dcs.shef.ac.uk/intranet/teaching/public/assessment/latehandin.html)
 5. [How to Avoid Handing in Assignments Late](https://www.wikihow.com/Avoid-Handing-in-Assignments-Late)
 
-## Grace Days
+## 宽限日期
 
-**1 week** (before labour's day, **2018-04-30**)
+**1 周** (劳动节前, **2018-04-30**)
