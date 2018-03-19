@@ -1,6 +1,10 @@
 # How to Score
 
-TBA
+| Component  | BASIC             | ADVANCED               | HARD                |
+| :---:      | :---:             | :---:                  |  :---:              |
+| Server     | Minio             | s3proxy/s3mock/mock-s3 | Swift/Ceph          |
+| Client     | Minio Client (mc) | s3cmd/awscli           | awssdk/boto3        |
+| Benchmark  | workload-sample   | select research topic  | programmed research |
 
 # Submiting your report
 
@@ -11,7 +15,7 @@ TBA
 
 ## Important Dates
 
-TBA
+2018-04-12
 
 * Hand in date
 
@@ -25,4 +29,4 @@ TBA
 
 ## Grace Days
 
-**1 week**
+**1 week (2018-04-19)**
