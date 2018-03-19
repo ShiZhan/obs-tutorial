@@ -57,6 +57,8 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
     * 选项 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift)，开箱即用容器版: <https://github.com/cs-course/openstack-swift-docker>。
     * 选项 8: [Ceph](https://ceph.com/)，开箱即用容器版: <https://github.com/ceph/ceph-container>。
 
+除初学用 _选项1_ 之外，_选项6_ 也提供免编译执行程序下载，仅需要Java虚拟机支持。
+
 ## 对象存储客户端
 
 * 独立工具集:

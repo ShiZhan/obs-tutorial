@@ -57,6 +57,8 @@ For those who want to run Openstack Swift or Ceph in docker, refer to Docker tut
     * Option 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift), fast deployment by All-in-one container: <https://github.com/cs-course/openstack-swift-docker>.
     * Option 8: [Ceph](https://ceph.com/), docker files and images to run Ceph in containers: <https://github.com/ceph/ceph-container>.
 
+Besides _Option 1_, only _Option 6_ offers compile-free binary executable, the only dependency is JVM.
+
 ## Object Storage Client
 
 * Standalone Utilities:
@@ -72,7 +74,7 @@ For those who want to run Openstack Swift or Ceph in docker, refer to Docker tut
     * Option 4: [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/)
     * Option 5: [boto](https://github.com/boto/boto3)
 
-Option 2 & 3 are more general and versatile, both are widely used for various object storage services.
+_Option 2 & 3_ are more general and versatile, both are widely used for various object storage services.
 
 ## Object Storage Benchmark
 
