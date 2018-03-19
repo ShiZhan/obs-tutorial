@@ -1,10 +1,13 @@
 # How to Score
 
-| Component  | BASIC             | ADVANCED               | HARD                |
+| Component  | BASIC             | ADVANCED<sup>1</sup>   | HARD <sup>1</sup>   |
 | :---:      | :---:             | :---:                  |  :---:              |
 | Server     | Minio             | s3proxy/s3mock/mock-s3 | Swift/Ceph          |
 | Client     | Minio Client (mc) | s3cmd/awscli           | awssdk/boto3        |
 | Benchmark  | workload-sample   | select research topic  | programmed research |
+
+1. **Limited in-class help**, with complete on-line resource provided in this repository.
+2. **No additional supply** beyond portals from this repository.
 
 # Submiting your report
 
