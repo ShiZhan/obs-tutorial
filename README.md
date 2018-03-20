@@ -64,7 +64,7 @@ For those who want to run Openstack Swift or Ceph in docker, refer to Docker tut
     * Option 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift), fast deployment by All-in-one container: <https://github.com/cs-course/openstack-swift-docker>.
     * Option 8: [Ceph](https://ceph.com/), docker files and images to run Ceph in containers: <https://github.com/ceph/ceph-container>.
 
-Besides _Option 1_, _Option 2, 3_ offers compile-free executable.
+Besides _Option 1_, _Option 2, 3_ offer compile-free executable.
 
 ## Object Storage Client
 
