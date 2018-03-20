@@ -87,7 +87,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
 
 * COSBench <https://github.com/intel-cloud/cosbench>
     * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>。
-    * 负载范例 <https://github.com/Zhan2012/obs-tutorial/raw/master/minio-workload-example.xml>。
+    * 负载范例 <https://github.com/Zhan2012/obs-tutorial/raw/master/workload-example.xml>。
     * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>。
 
 ### 参考文献

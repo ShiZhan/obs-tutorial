@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<workload name="sample" description="sample benchmark">
+
+  <storage type="s3" config="accesskey=hust;secretkey=hust2018;endpoint=http://127.0.0.1:9000/" />
+
+  <workflow>
+
+    <workstage name="init">
+      <work type="init" workers="1" config="cprefix=s3obstest;containers=r(1,8)" />
+    </workstage>
+
+    <workstage name="prepare">
+      <work type="prepare" workers="8" config="cprefix=s3obstest;containers=r(1,1);objects=r(1,8);sizes=c(8)KB" />
+      <work type="prepare" workers="8" config="cprefix=s3obstest;containers=r(2,2);objects=r(1,8);sizes=c(16)KB" />
+      <work type="prepare" workers="8" config="cprefix=s3obstest;containers=r(3,3);objects=r(1,8);sizes=c(32)KB" />
+      <work type="prepare" workers="8" config="cprefix=s3obstest;containers=r(4,4);objects=r(1,8);sizes=c(64)KB" />
+      <work type="prepare" workers="8" config="cprefix=s3obstest;containers=r(5,5);objects=r(1,8);sizes=c(128)KB" />
+      <work type="prepare" workers="8" config="cprefix=s3obstest;containers=r(6,6);objects=r(1,8);sizes=c(256)KB" />
+      <work type="prepare" workers="8" config="cprefix=s3obstest;containers=r(7,7);objects=r(1,8);sizes=c(512)KB" />
+      <work type="prepare" workers="8" config="cprefix=s3obstest;containers=r(8,8);objects=r(1,8);sizes=c(1)MB" />
+    </workstage>
+
+    <workstage name="8kb">
+      <work name="8kb" workers="8" runtime="30">
+        <operation type="read"  ratio="80" config="cprefix=s3obstest;containers=c(1);objects=u(1,8)" />
+        <operation type="write" ratio="20" config="cprefix=s3obstest;containers=c(1);objects=u(9,16);sizes=c(8)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="16kb">
+      <work name="16kb" workers="8" runtime="30">
+        <operation type="read"  ratio="80" config="cprefix=s3obstest;containers=c(2);objects=u(1,8)" />
+        <operation type="write" ratio="20" config="cprefix=s3obstest;containers=c(1);objects=u(9,16);sizes=c(16)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="32kb">
+      <work name="32kb" workers="4" runtime="30">
+        <operation type="read"  ratio="80" config="cprefix=s3obstest;containers=c(3);objects=u(1,8)" />
+        <operation type="write" ratio="20" config="cprefix=s3obstest;containers=c(1);objects=u(9,16);sizes=c(32)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="64kb">
+      <work name="64kb" workers="4" runtime="30">
+        <operation type="read"  ratio="80" config="cprefix=s3obstest;containers=c(4);objects=u(1,8)" />
+        <operation type="write" ratio="20" config="cprefix=s3obstest;containers=c(1);objects=u(9,16);sizes=c(64)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="128kb">
+      <work name="128kb" workers="1" runtime="30">
+        <operation type="read"  ratio="80" config="cprefix=s3obstest;containers=c(5);objects=u(1,8)" />
+        <operation type="write" ratio="20" config="cprefix=s3obstest;containers=c(1);objects=u(9,16);sizes=c(128)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="256kb">
+      <work name="256kb" workers="1" runtime="30">
+        <operation type="read"  ratio="80" config="cprefix=s3obstest;containers=c(6);objects=u(1,8)" />
+        <operation type="write" ratio="20" config="cprefix=s3obstest;containers=c(1);objects=u(9,16);sizes=c(256)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="512kb">
+      <work name="512kb" workers="1" runtime="30">
+        <operation type="read"  ratio="80" config="cprefix=s3obstest;containers=c(7);objects=u(1,8)" />
+        <operation type="write" ratio="20" config="cprefix=s3obstest;containers=c(1);objects=u(9,16);sizes=c(512)KB" />
+      </work>
+    </workstage>
+
+    <workstage name="1mb">
+      <work name="1mb" workers="1" runtime="30">
+        <operation type="read"  ratio="80" config="cprefix=s3obstest;containers=c(8);objects=u(1,8)" />
+        <operation type="write" ratio="20" config="cprefix=s3obstest;containers=c(1);objects=u(9,16);sizes=c(1)MB" />
+      </work>
+    </workstage>
+
+    <workstage name="cleanup">
+      <work type="cleanup" workers="1" config="cprefix=s3obstest;containers=r(1,8);objects=r(1,16)" />
+    </workstage>
+
+    <workstage name="dispose">
+      <work type="dispose" workers="1" config="cprefix=s3obstest;containers=r(1,8)" />
+    </workstage>
+
+  </workflow>
+
+</workload>

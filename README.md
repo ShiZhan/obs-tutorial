@@ -87,7 +87,7 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
 
 * COSBench <https://github.com/intel-cloud/cosbench>
     * User Guide <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>.
-    * Example workload <https://github.com/Zhan2012/obs-tutorial/raw/master/minio-workload-example.xml>.
+    * Example workload <https://github.com/Zhan2012/obs-tutorial/raw/master/workload-example.xml>.
     * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
 
 ### References
