@@ -53,7 +53,7 @@ And open issues <https://github.com/minio/minio/issues>.
 
 1. To work with latest s3cmd and aws-shell, authorization should be disabled: `s3proxy.authorization=none`
     * No authorization, not for practical use.
-    * TODO: make authorization compatible with s3v4.
+    * TODO: make authorization compatible with current s3cmd/aws-shell.
 
 2. Windows: incorrect folder access, 'mb' may work, but with wrong properties, which prevent further operations like cp/put
     * No 'official' support for Windows, possible cause: unsupported file system metadata operation
@@ -65,4 +65,6 @@ And open issues <https://github.com/minio/minio/issues>.
     * Python 3 migration in progress, maybe BUGGY.
 
 2. No authorization, not for practical use.
+
+3. Windows: incorrect file IO, although CLI-based GET/PUT may work, COSBench will fail on read.
 
