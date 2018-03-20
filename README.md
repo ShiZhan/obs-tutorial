@@ -15,6 +15,12 @@ The **Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) 
 
 ## Environment
 
+### Git and Github (_**Recommended**_)
+
+Git tutorial <https://github.com/cs-course/git-tutorial>.
+
+For those who want unlimited private repositories, try [bitbucket](https://bitbucket.org/).
+
 ### How to establish Python Environment
 
 * Python Distributions:
@@ -32,11 +38,11 @@ The **Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) 
 
 Installation helper scripts <https://github.com/Zhan2012/java-bundle> (_**For adventurers**_).
 
-### Git and Github (_**Recommended**_)
+### How to use Linux in Windows or MacOS (_**Optional**_)
 
-Git tutorial <https://github.com/cs-course/git-tutorial>.
+Virtual Machine: Virtualbox, VMWare ...
 
-For those who want unlimited private repositories, try [bitbucket](https://bitbucket.org/).
+For those who want to run mock-s3 and s3proxy without trouble, Linux is a must, refer to <https://github.com/cs-course/vagrant-tutorial>.
 
 ### How to run servers within docker container (_**Optional**_)
 
@@ -47,17 +53,18 @@ For those who want to run Openstack Swift or Ceph in docker, refer to Docker tut
 * Object Storage for Beginners:
     * Option 1: [Minio](https://minio.io/), latest version <https://minio.io/downloads.html>.
 * Experimental Mock Servers:
-    * Option 2: [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**, the Origin.
-    * Option 3: [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
-        * Option 3.1: **Python 3 ready, maybe BUGGY** <https://github.com/Zhan2012/mock-s3>.
-    * Option 4: [s3mock](https://github.com/findify/s3mock), S3 mock library for Java/Scala. **Java/SBT Building is required**.
-    * Option 5: [S3Mock](https://github.com/adobe/S3Mock), S3 mock as Docker image or JUnit rule. **Java/Maven Building is required**, contributed by Adobe (c).
-    * Option 6: [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**, use Java/Maven to build.
+    * Option 2: [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
+        * Option 2.1: **Python 3 migrating, maybe BUGGY** <https://github.com/Zhan2012/mock-s3>.
+    * Option 3: [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**
+        * Option 3.1: Use Java/Maven to build `mvn package -Dmaven.test.skip=true`.
+    * Option 4: [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**, the Origin project.
+    * Option 5: [s3mock](https://github.com/findify/s3mock), S3 mock library for Java/Scala. **Java/SBT Building is required**.
+    * Option 6: [S3Mock](https://github.com/adobe/S3Mock), S3 mock as Docker image or JUnit rule. **Use Java/Maven to build, use docker to run**, contributed by Adobe (c).
 * Industry Level Projects:
     * Option 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift), fast deployment by All-in-one container: <https://github.com/cs-course/openstack-swift-docker>.
     * Option 8: [Ceph](https://ceph.com/), docker files and images to run Ceph in containers: <https://github.com/ceph/ceph-container>.
 
-Besides _Option 1_, only _Option 6_ offers compile-free binary executable, the only dependency is JVM.
+Besides _Option 1_, _Option 2, 3_ offers compile-free executable.
 
 ## Object Storage Client
 

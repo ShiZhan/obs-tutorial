@@ -15,6 +15,12 @@
 
 ## 基础环境
 
+### Git和Github (_**建议学习**_)
+
+Git tutorial <https://github.com/cs-course/git-tutorial>。
+
+如果需要不限数量的私密仓库，可以试一试 [bitbucket](https://bitbucket.org/)。
+
 ### Python怎么搞定
 
 * 发行版:
@@ -32,11 +38,11 @@
 
 一些安装辅助脚本 <https://github.com/Zhan2012/java-bundle> (_**给喜欢自己琢磨的同学参考**_)。
 
-### Git和Github (_**建议学习**_)
+### 怎么在Windows或者MacOS里面跑Linux (_**可选**_)
 
-Git tutorial <https://github.com/cs-course/git-tutorial>。
+虚拟机平台: Virtualbox, VMWare ...
 
-如果需要不限数量的私密仓库，可以试一试 [bitbucket](https://bitbucket.org/)。
+如果计划无伤尝试 mock-s3 或 s3proxy，最好用 Linux，可参考 Vagrant tutorial <https://github.com/cs-course/vagrant-tutorial>。
 
 ### docker容器怎么搞定 (_**可选**_)
 
@@ -47,17 +53,18 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
 * 初学者:
     * 选项 1: [Minio](https://minio.io/), 最新版 <https://minio.io/downloads.html>。
 * 实验性模拟服务程序:
-    * 选项 2: [fake-s3](https://github.com/jubos/fake-s3)，Amazon S3轻量级模仿。**需要Ruby**，首个S3克隆项目。
-    * 选项 3: [mock-s3](https://github.com/jserver/mock-s3)，用Python重写fake-s3。**需要Python 2.7**。
-        * 选项 3.1: **Python 3 移植(测试)版** <https://github.com/Zhan2012/mock-s3>。
-    * 选项 4: [s3mock](https://github.com/findify/s3mock)，用Java/Scala实现S3模拟。**需要用Java/SBT构建**。
-    * 选项 5: [S3Mock](https://github.com/adobe/S3Mock)，可以放进Docker容器或者JUnit规则的S3模拟。**需要用Java/SBT构建**，由Adobe (c)推出。
-    * 选项 6: [s3proxy](https://github.com/gaul/s3proxy)，为各类存储提供S3 API。**预编译包[猛击此处](https://github.com/gaul/s3proxy/releases)**，或者可以自己用Java/Maven构建。
+    * 选项 2: [mock-s3](https://github.com/jserver/mock-s3)，用Python重写fake-s3。**需要Python 2.7**。
+        * 选项 2.1: **Python 3版(移植中，测试版)** <https://github.com/Zhan2012/mock-s3>。
+    * 选项 3: [s3proxy](https://github.com/gaul/s3proxy)，为各类存储提供S3 API。**预编译包[猛击此处](https://github.com/gaul/s3proxy/releases)**
+        * 选项 3.1: 自己用Java/Maven从源码构建 `mvn package -Dmaven.test.skip=true`。
+    * 选项 4: [fake-s3](https://github.com/jubos/fake-s3)，Amazon S3轻量级模仿。**需要Ruby**，首个S3克隆项目。
+    * 选项 5: [s3mock](https://github.com/findify/s3mock)，用Java/Scala实现S3模拟。**需要用Java/SBT构建**。
+    * 选项 6: [S3Mock](https://github.com/adobe/S3Mock)，可以放进Docker容器或者JUnit规则的S3模拟。**需要用Java/SBT构建，需要Docker运行**，由Adobe (c)推出。
 * 企业级项目:
     * 选项 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift)，开箱即用容器版: <https://github.com/cs-course/openstack-swift-docker>。
     * 选项 8: [Ceph](https://ceph.com/)，开箱即用容器版: <https://github.com/ceph/ceph-container>。
 
-除初学用 _选项1_ 之外，_选项6_ 也提供免编译执行程序下载，仅需要Java虚拟机支持。
+除初学用 _选项1_ 之外，_选项2,3_ 也提供免编译执行程序下载。
 
 ## 对象存储客户端
 
