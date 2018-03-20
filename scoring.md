@@ -2,7 +2,7 @@
 
 | Component  | BASIC             | ADVANCED <sup>1</sup>  | HARD <sup>2</sup>   |
 | :---       | :---              | :---                   | :---                |
-| Server     | Minio Server      | s3proxy/s3mock/mock-s3 | Swift/Ceph          |
+| Server     | Minio Server      | s3proxy/mock-s3/...    | Swift/Ceph          |
 | Client     | Minio Client      | s3cmd/aws-{cli\|shell} | awssdk/boto3        |
 | Benchmark  | workload-sample   | select research topic  | programmed research |
 

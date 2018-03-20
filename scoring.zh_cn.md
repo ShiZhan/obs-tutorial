@@ -2,7 +2,7 @@
 
 | 组成部分    | 基础               | 进阶 <sup>1</sup>       | 困难 <sup>2</sup>   |
 | :---       | :---              | :---                   | :---                |
-| Server     | Minio Server      | s3proxy/s3mock/mock-s3 | Swift/Ceph          |
+| Server     | Minio Server      | s3proxy/mock-s3/...    | Swift/Ceph          |
 | Client     | Minio Client      | s3cmd/aws-{cli\|shell} | awssdk/boto3        |
 | Benchmark  | 预置负载范例        | 选题测试研究             | 编制实验程序研究       |
 
