@@ -90,6 +90,14 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
     * 负载范例 <https://github.com/Zhan2012/obs-tutorial/raw/master/workload-example.xml>。
     * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>。
 
+## 各类已知问题
+
+安装使用过程中的各种["坑"](known-issues.md)。
+
+欢迎经验分享<https://github.com/Zhan2012/obs-tutorial/wiki>。
+
+还有问题报告<https://github.com/Zhan2012/obs-tutorial/issues>。
+
 ### 参考文献
 
 * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900

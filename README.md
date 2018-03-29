@@ -96,6 +96,14 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
 * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
 * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
+## Known Issues
+
+[Known issues](known-issues.md).
+
+Contribute your experiences in <https://github.com/Zhan2012/obs-tutorial/wiki>.
+
+Report more problems in <https://github.com/Zhan2012/obs-tutorial/issues>.
+
 # Basic Functionality
 
 In computer programming, [create, read, update, and delete (as an acronym CRUD)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) are the four basic functions of persistent storage.
