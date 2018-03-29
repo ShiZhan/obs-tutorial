@@ -6,12 +6,17 @@ Refer to official documents, <https://docs.minio.io/>.
 
 And open issues <https://github.com/minio/minio/issues>.
 
+## Minio Client
+
+Accesskey should be 8 or more characters long.
+
 ## COSBench
 
 1. For JDK deployment, portal to [Oracle official sites](http://www.oracle.com/technetwork/cn/java/javase/downloads/index.html).
     * Linux: download dpk for Debian/Ubuntu, rpm for CentOS, as for the latter, simply run `rpm -ivh <downloaded jdk rpm package>`.
     * Windows: download installation package and run.
     * Some references <https://github.com/Zhan2012/java-bundle>
+    * **JDK 1.8** recommended, although 1.7 may also work.
 
 2. From [COSBench release page](https://github.com/intel-cloud/cosbench/releases), choose release candidate (<https://github.com/intel-cloud/cosbench/releases/download/v0.4.2.c4/0.4.2.c4.zip>, contains ready to run binary) rather than final release (require manual compilation).
     * refer to [open-io's choice](https://github.com/open-io/cosbench/releases).
@@ -26,8 +31,12 @@ And open issues <https://github.com/minio/minio/issues>.
     * start-all.sh depends on _**nc**_, if its not available
         * Ubuntu: `apt-get install nmap`
         * CentOS: `yum install nmap-ncat`
+    * MacOS uses a different version of nc, and ss is not immediately available, so
+        * Either comment out the port checking codes in cosbench-start.sh
+        * Or use Linux VM instead.
 
 4. COSBench workload definition
+    * For benchmarking with Minio server, the accesskey and secretkey **MUST BE** the same with Minio server configuration.
     * "cprefix" naming
         * Avoid special characters in "cprefix", such as '\_' and '-'.
         * Avoid uppercase letters in "cprefix".
