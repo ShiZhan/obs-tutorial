@@ -13,7 +13,7 @@ And open issues <https://github.com/minio/minio/issues>.
     * Windows: download installation package and run.
     * Some references <https://github.com/Zhan2012/java-bundle>
 
-2. In [COSBench release page](https://github.com/intel-cloud/cosbench/releases), choose release candidate rather than final release (require manual compilation).
+2. From [COSBench release page](https://github.com/intel-cloud/cosbench/releases), choose release candidate (<https://github.com/intel-cloud/cosbench/releases/download/v0.4.2.c4/0.4.2.c4.zip>, contains ready to run binary) rather than final release (require manual compilation).
     * refer to [open-io's choice](https://github.com/open-io/cosbench/releases).
     * download zip file for running directly without compilation.
     * If you are familiar with Java, clone the repo and build from the latest source for yourself.
