@@ -22,6 +22,8 @@ Accesskey should be 8 or more characters long.
     * refer to [open-io's choice](https://github.com/open-io/cosbench/releases).
     * download zip file for running directly without compilation.
     * If you are familiar with Java, clone the repo and build from the latest source for yourself.
+    * alternate method of running COSBench, in docker containers <https://hub.docker.com/r/scality/cosbench/>.
+        * use `docker run -it scality/cosbench bash` to enter containerized linux with COSBench ready to run.
 
 3. COSBench scripts
     * Use `start-all.sh` to run and `stop-all.sh` to stop.
