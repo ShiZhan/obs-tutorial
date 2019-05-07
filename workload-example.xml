@@ -2,7 +2,7 @@
 
 <workload name="sample" description="sample benchmark">
 
-  <storage type="s3" config="accesskey=hust;secretkey=hust2018;endpoint=http://127.0.0.1:9000/" />
+  <storage type="s3" config="accesskey=hust;secretkey=hust2019;endpoint=http://127.0.0.1:9000/" />
 
   <workflow>
 
