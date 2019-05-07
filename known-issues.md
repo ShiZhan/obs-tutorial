@@ -60,6 +60,11 @@ Accesskey should be 8 or more characters long.
     * "Stat: Failed": Succ-Ratio < 80%
     * For failed requests, check `workload.log` in `cosbench/archive/w[dd]-[workload name]`, usually bad checksum.
 
+## s3bench
+
+1. Before running, create **loadgen** container first.
+    * OSM: `osm mc loadgen`
+
 ## s3proxy
 
 1. To work with latest s3cmd and aws-shell, authorization should be disabled: `s3proxy.authorization=none`
@@ -78,4 +83,8 @@ Accesskey should be 8 or more characters long.
 2. No authorization, not for practical use.
 
 3. Windows: incorrect file IO, although CLI-based GET/PUT may work, COSBench will fail on read.
+
+## golang
+
+1. 关于 GOPATH，参考 <https://rakyll.org/default-gopath/>
 

@@ -40,6 +40,13 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 
 一些安装辅助脚本 <https://github.com/Zhan2012/java-bundle> (_**给喜欢自己琢磨的同学参考**_)
 
+### Go怎么搞定
+
+* 国内资料 <https://studygolang.com/>
+* 墙外本体 <https://golang.org/>
+* 经典书籍 <https://github.com/Unknwon/the-way-to-go_ZH_CN>
+* 学习资料荟萃 <https://github.com/uhub/awesome-go>
+
 ### 怎么在Windows或者MacOS里面跑Linux (_**可选**_)
 
 **目的**: 计划无伤尝试 mock-s3 或 s3proxy
@@ -86,6 +93,8 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         * 于Python环境中运行 `pip install aws-shell`
         * 为 Minio 配置 <https://docs.minio.io/docs/aws-cli-with-minio>
         * 官方手册 <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
+    * 选项 4: osm <https://github.com/appscode/osm>
+        * `go get -u go get -u github.com/appscode/osm`
 * APIs:
     * 选项 4: [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/)
     * 选项 5: [boto](https://github.com/boto/boto3)
@@ -99,6 +108,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
     * 负载范例 <https://github.com/cs-course/obs-tutorial/raw/master/workload-example.xml>
     * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>
 * S3 Bench <https://github.com/igneous-systems/s3bench>
+    * 安装 `go get -u github.com/igneous-systems/s3bench`
     * 命令行范例 `./s3bench -accessKey=hust -accessSecret=hust2019 -bucket=loadgen -endpoint=http://127.0.0.1:9000 -numClients=10 -numSamples=100 -objectNamePrefix=loadgen -objectSize=1024`
 
 ## 各类已知问题
