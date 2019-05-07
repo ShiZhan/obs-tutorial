@@ -163,4 +163,4 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * 企业级 [对象存储比较](http://gaul.org/object-store-comparison/)
 * [用Go语言自制对象存储系统](https://github.com/stuarthu/go-implement-your-object-storage)
 
-Zhan.Shi @ 2018
+Zhan.Shi @ 2017, 2018, 2019
