@@ -15,38 +15,47 @@
 
 ## 基础环境
 
-### Git和Github (_**建议学习**_)
+### Git和Github
 
-Git tutorial <https://github.com/cs-course/git-tutorial>。
+Git tutorial <https://github.com/cs-course/git-tutorial>
 
-如果需要不限数量的私密仓库，可以试一试 [bitbucket](https://bitbucket.org/)。
+替代方案
+
+- [bitbucket](https://bitbucket.org/)
+- [gitlab](https://about.gitlab.com/)
 
 ### Python怎么搞定
 
-* 发行版:
+* 发行版
     * 选项 1: [Anaconda](https://www.anaconda.com/)
-        * 向这里伸手 <https://repo.continuum.io/archive/Anaconda3-5.1.0-Windows-x86_64.exe> 然后安装
     * 选项 2: [WinPython](http://winpython.github.io/)
-        * 向这里伸手 <https://sourceforge.net/projects/winpython/files/WinPython_3.6/3.6.3.0/> 然后安装
-* 用容器快速部署:
+* 用容器快速部署 (_**可选**_)
     * 选项 3: Python Docker <https://github.com/Zhan2012/python-lab>
-        * `docker login daocloud.io && docker pull daocloud.io/zhan2016/python-lab:master-31a932d`
+        * dockerhub (docker大本营) `docker pull zhan2016/python-lab:3.6.0`
+        * daocloud (国内平台) `docker login daocloud.io && docker pull daocloud.io/zhan2016/python-lab:master-31a932d`
 
 ### Java怎么搞定
 
-**同学期课程**: Java语言程序设计, [2017-2018 第2学期](http://jwc.hust.edu.cn/info/1161/6122.htm)
+**同学期课程**: Java语言程序设计, [2018-2019 第2学期 3~8周](http://jwc.hust.edu.cn/info/1161/6721.htm)
 
-一些安装辅助脚本 <https://github.com/Zhan2012/java-bundle> (_**给喜欢自己琢磨的同学参考**_)。
+一些安装辅助脚本 <https://github.com/Zhan2012/java-bundle> (_**给喜欢自己琢磨的同学参考**_)
 
 ### 怎么在Windows或者MacOS里面跑Linux (_**可选**_)
 
-虚拟机平台: Virtualbox, VMWare ...
+**目的**: 计划无伤尝试 mock-s3 或 s3proxy
 
-如果计划无伤尝试 mock-s3 或 s3proxy，最好用 Linux，可参考 Vagrant tutorial <https://github.com/cs-course/vagrant-tutorial>。
+**工具**: Virtualbox, VMWare ...
+
+直奔图形界面，或者参考 Vagrant tutorial <https://github.com/cs-course/vagrant-tutorial>
 
 ### docker容器怎么搞定 (_**可选**_)
 
-如果计划尝试 Openstack Swift 或 Ceph，容器可以帮助简化部署，可参考 Docker tutorial <https://github.com/cs-course/docker-tutorial>。
+**目的**: 计划尝试 Openstack Swift 或 Ceph
+
+使用容器简化部署，容器使用可参考 Docker tutorial <https://github.com/cs-course/docker-tutorial>
+
+- [Ceph官方容器](https://hub.docker.com/r/ceph/ceph)
+- [Swift简易容器](https://hub.docker.com/r/fnndsc/docker-swift-onlyone)
 
 ## 对象存储服务端
 
@@ -86,17 +95,17 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
 ## 对象存储评测工具
 
 * COSBench <https://github.com/intel-cloud/cosbench>
-    * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>。
-    * 负载范例 <https://github.com/Zhan2012/obs-tutorial/raw/master/workload-example.xml>。
-    * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>。
+    * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>
+    * 负载范例 <https://github.com/cs-course/obs-tutorial/raw/master/workload-example.xml>
+    * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>
+* S3 Bench <https://github.com/igneous-systems/s3bench>
+    * 命令行范例 `./s3bench -accessKey=hust -accessSecret=hust2019 -bucket=loadgen -endpoint=http://127.0.0.1:9000 -numClients=10 -numSamples=100 -objectNamePrefix=loadgen -objectSize=1024`
 
 ## 各类已知问题
 
-安装使用过程中的各种["坑"](known-issues.md)。
-
-欢迎经验分享<https://github.com/Zhan2012/obs-tutorial/wiki>。
-
-还有问题报告<https://github.com/Zhan2012/obs-tutorial/issues>。
+安装使用过程中的各种["坑"](known-issues.md)
+经验分享<https://github.com/cs-course/obs-tutorial/wiki>
+问题报告<https://github.com/cs-course/obs-tutorial/issues>
 
 ### 参考文献
 
@@ -125,22 +134,23 @@ Git tutorial <https://github.com/cs-course/git-tutorial>。
     * 对于熟悉的某类应用，根据其数据访问特性，怎样适配对象存储最合适?
 * I/O 延迟背后的关键影响要素?
     * 首先要采集全面的 I/O 延迟观测数据。
+    * 百分位延迟观测需使用s3bench，然后即可分析尾延迟影响因素。
 * 如果客户端爆满将怎样?
 * 测试项为何出现 '**fail**'? (不是 terminate)
-* 横向扩展系统 scaling out 效果如何 (向系统中追加更多存储服务器)?
+* 横向扩展系统 (Scaling Out) 效果如何 (向系统中追加更多存储服务器)?
 
 不限于上述内容，鼓励更丰富思考。
 
 ## 更进一步
 
-* 前述实验如何自己编程实现 (不借助于 COSBench)?
+* 前述实验如何自己编程实现 (不借助于 COSBench、s3bench)?
 * 把 Python 当作自己的实验台
     * Jupyter Notebook Tutorial <https://github.com/cs-course/jupyter-tutorial>
 
 # 扩展资料
 
-对象存储方面 SNIA 最新博文 <http://sniablog.org/category/object-storage/>。
-
-企业级 [对象存储比较](http://gaul.org/object-store-comparison/)。
+* 对象存储方面 SNIA 最新博文 <http://sniablog.org/category/object-storage/>
+* 企业级 [对象存储比较](http://gaul.org/object-store-comparison/)
+* [用Go语言自制对象存储系统](https://github.com/stuarthu/go-implement-your-object-storage)
 
 Zhan.Shi @ 2018
