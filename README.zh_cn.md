@@ -110,6 +110,8 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * S3 Bench <https://github.com/igneous-systems/s3bench>
     * 安装 `go get -u github.com/igneous-systems/s3bench`
     * 命令行范例 `./s3bench -accessKey=hust -accessSecret=hust2019 -bucket=loadgen -endpoint=http://127.0.0.1:9000 -numClients=10 -numSamples=100 -objectNamePrefix=loadgen -objectSize=1024`
+    * 测试脚本范例 <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
+        * 实际使用建议通过定制参数，设计循环结构实现批量测试，将结果重定向进文件用于后期分析
 
 ## 各类已知问题
 
