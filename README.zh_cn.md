@@ -94,7 +94,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         * 为 Minio 配置 <https://docs.minio.io/docs/aws-cli-with-minio>
         * 官方手册 <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
     * 选项 4: osm <https://github.com/appscode/osm>
-        * `go get -u go get -u github.com/appscode/osm`
+        * `go get -u github.com/appscode/osm`
 * APIs:
     * 选项 4: [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/)
     * 选项 5: [boto](https://github.com/boto/boto3)
