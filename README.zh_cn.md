@@ -115,9 +115,9 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 
 ## 各类已知问题
 
-安装使用过程中的各种["坑"](known-issues.md)
-经验分享<https://github.com/cs-course/obs-tutorial/wiki>
-问题报告<https://github.com/cs-course/obs-tutorial/issues>
+* 安装使用过程中的各种["坑"](known-issues.md)
+* 经验分享<https://github.com/cs-course/obs-tutorial/wiki>
+* 问题报告<https://github.com/cs-course/obs-tutorial/issues>
 
 ### 参考文献
 
