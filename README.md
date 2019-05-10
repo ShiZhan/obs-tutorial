@@ -126,6 +126,10 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
         git clone https://github.com/wasabi-tech/s3-benchmark.git
         go build s3-bechmark.go
         ```
+    * The original version may fail on building, use one of its fixed fork instead
+        ```bash
+        go get -u github.com/charz/s3-benchmark
+        ```
     * Command line example
         ```bash
         ./s3-benchmark.ubuntu \

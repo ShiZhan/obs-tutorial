@@ -129,17 +129,19 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         ```
         
     * 脚本范例 <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
+      
         * 实际使用建议通过定制参数，设计循环结构实现批量测试，将结果重定向进文件用于后期分析
 * s3-benchmark <https://github.com/wasabi-tech/s3-benchmark>
     * **安装**
-
         ```bash
         git clone https://github.com/wasabi-tech/s3-benchmark.git
         go build s3-bechmark.go
         ```
-        
+    * 原始版本可能编译失败，缺少依赖，可以用这个修补版本
+        ```bash
+        go get -u github.com/charz/s3-benchmark
+        ```
     * 命令行范例
-    
         ```bash
         ./s3-benchmark.ubuntu \
             -a hust -s hust2019 \
