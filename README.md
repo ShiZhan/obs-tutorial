@@ -104,36 +104,40 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
       * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
     
 * S3 Bench <https://github.com/igneous-systems/s3bench>
-
-    * **Installation**: `go get -u github.com/igneous-systems/s3bench`
-    * Benchmark command line example
-        * `./s3bench -accessKey=hust -accessSecret=hust2019 -bucket=loadgen 
-            -endpoint=http://127.0.0.1:9000 -numClients=10 -numSamples=100 
-            -objectNamePrefix=loadgen -objectSize=1024`
-    * Script example <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
-        * Customize before using this script, for a broader coverage.
-
-* s3-benchmark <https://github.com/wasabi-tech/s3-benchmark>
-
     * **Installation**
-
+        ```bash
+        go get -u github.com/igneous-systems/s3bench
+        ```
+    * Command line example
+        ```bash
+        ./s3bench \
+            -accessKey=hust -accessSecret=hust2019 \
+            -endpoint=http://127.0.0.1:9000 \
+            -bucket=loadgen -objectNamePrefix=loadgen \
+            -numClients=10 -numSamples=100 -objectSize=1024
+        ```
+    * Script example <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
+        
+    * Customize before using this script, for a broader coverage.
+    
+* s3-benchmark <https://github.com/wasabi-tech/s3-benchmark>
+    * **Installation**
         ```bash
         git clone https://github.com/wasabi-tech/s3-benchmark.git
         go build s3-bechmark.go
         ```
-        
-    * Benchmark command line example
-    
+    * Command line example
         ```bash
-        ./s3-benchmark.ubuntu -a hust -s hust2019 -b benchmark-bucket -t 10 -u http://127.0.0.1:9000
+        ./s3-benchmark.ubuntu \
+            -a hust -s hust2019 \
+            -u http://127.0.0.1:9000 \
+            -b benchmark-bucket -t 10
         ```
 
 ## Experiences and Problems
 
 - [Known issues](known-issues.md).
-
 - Contribute your experiences in <https://github.com/Zhan2012/obs-tutorial/wiki>.
-
 - Report more problems in <https://github.com/Zhan2012/obs-tutorial/issues>.
 
 # Basic Functionality
