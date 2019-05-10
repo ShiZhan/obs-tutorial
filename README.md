@@ -15,38 +15,44 @@ The **Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) 
 
 ## Environment
 
-### Git and Github (_**Recommended**_)
+### Git and Github
 
 Git tutorial <https://github.com/cs-course/git-tutorial>.
 
-For those who want unlimited private repositories, try [bitbucket](https://bitbucket.org/).
+Alternatives: [bitbucket](https://bitbucket.org/), [gitlab](https://about.gitlab.com/).
 
 ### How to establish Python Environment
 
 * Python Distributions:
     * Option 1: [Anaconda](https://www.anaconda.com/)
-        * Download from <https://repo.continuum.io/archive/Anaconda3-5.1.0-Windows-x86_64.exe> & install
     * Option 2: [WinPython](http://winpython.github.io/)
-        * Download from <https://sourceforge.net/projects/winpython/files/WinPython_3.6/3.6.3.0/> & install
 * Fast deployment by docker:
-    * Option 3: Python Docker <https://github.com/Zhan2012/python-lab>
+    * Option 3: Python Docker <https://github.com/Zhan2012/python-lab>, E.g.:
+        * `docker pull zhan2016/python-lab:3.6.0`
         * `docker login daocloud.io && docker pull daocloud.io/zhan2016/python-lab:master-31a932d`
 
 ### How to establish Java Environment
 
-**Ongoing course**: Java Programming, [2017-2018 2nd semester](http://jwc.hust.edu.cn/info/1161/6122.htm), just follow your teacher's guide.
+**Ongoing course**: Java Programming, [2018-2019 2nd semester](http://jwc.hust.edu.cn/info/1161/6721.htm), just follow your teacher's guide.
 
 Installation helper scripts <https://github.com/Zhan2012/java-bundle> (_**For adventurers**_).
 
 ### How to use Linux in Windows or MacOS (_**Optional**_)
 
-Virtual Machine: Virtualbox, VMWare ...
+**Goal**: try mock-s3 and s3proxy with less trouble
 
-For those who want to run mock-s3 and s3proxy without trouble, Linux is a must, refer to <https://github.com/cs-course/vagrant-tutorial>.
+**Method**: Virtual Machine: Virtualbox, VMWare ...
+
+Go directly to GUI, or using vagrant,refer to <https://github.com/cs-course/vagrant-tutorial>.
 
 ### How to run servers within docker container (_**Optional**_)
 
-For those who want to run Openstack Swift or Ceph in docker, refer to Docker tutorial <https://github.com/cs-course/docker-tutorial>.
+**Goal**: try Openstack Swift or Ceph with less trouble
+
+Better run within docker, refer to Docker tutorial <https://github.com/cs-course/docker-tutorial>.
+
+- [Ceph docker images](https://hub.docker.com/r/ceph/ceph)
+- [Openstack Swift all-in-one docker image](https://hub.docker.com/r/fnndsc/docker-swift-onlyone)
 
 ## Object Storage Server
 
@@ -70,13 +76,16 @@ Besides _Option 1_, _Option 2, 3_ offer compile-free executable.
 
 * Standalone Utilities:
     * Option 1: Minio Client <https://docs.minio.io/docs/minio-client-quickstart-guide>
+        * **Installation**: download and run
     * Option 2: s3cmd <https://github.com/s3tools/s3cmd>
-        * run `pip install s3cmd` in python environment
+        * **Installation**: run `pip install s3cmd` in python environment
         * Configure for Minio <https://docs.minio.io/docs/s3cmd-with-minio>
     * Option 3: aws-shell <https://github.com/awslabs/aws-shell>
-        * run `pip install aws-shell` in python environment
+        * **Installation**: run `pip install aws-shell` in python environment
         * Configure for Minio <https://docs.minio.io/docs/aws-cli-with-minio>
         * Official Manual <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
+    * Option 4: osm <https://github.com/appscode/osm>
+        * **Installation**: `go get -u github.com/appscode/osm`
 * APIs:
     * Option 4: [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/)
     * Option 5: [boto](https://github.com/boto/boto3)
@@ -89,20 +98,43 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
     * User Guide <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>.
     * Example workload <https://github.com/Zhan2012/obs-tutorial/raw/master/workload-example.xml>.
     * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
+    * Literatures
+      * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
+      * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
+      * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
+    
+* S3 Bench <https://github.com/igneous-systems/s3bench>
 
-### References
+    * **Installation**: `go get -u github.com/igneous-systems/s3bench`
+    * Benchmark command line example
+        * `./s3bench -accessKey=hust -accessSecret=hust2019 -bucket=loadgen 
+            -endpoint=http://127.0.0.1:9000 -numClients=10 -numSamples=100 
+            -objectNamePrefix=loadgen -objectSize=1024`
+    * Script example <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
+        * Customize before using this script, for a broader coverage.
 
-* COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
-* COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
-* COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
+* s3-benchmark <https://github.com/wasabi-tech/s3-benchmark>
 
-## Known Issues
+    * **Installation**
 
-[Known issues](known-issues.md).
+        ```bash
+        git clone https://github.com/wasabi-tech/s3-benchmark.git
+        go build s3-bechmark.go
+        ```
+        
+    * Benchmark command line example
+    
+        ```bash
+        ./s3-benchmark.ubuntu -a hust -s hust2019 -b benchmark-bucket -t 10 -u http://127.0.0.1:9000
+        ```
 
-Contribute your experiences in <https://github.com/Zhan2012/obs-tutorial/wiki>.
+## Experiences and Problems
 
-Report more problems in <https://github.com/Zhan2012/obs-tutorial/issues>.
+- [Known issues](known-issues.md).
+
+- Contribute your experiences in <https://github.com/Zhan2012/obs-tutorial/wiki>.
+
+- Report more problems in <https://github.com/Zhan2012/obs-tutorial/issues>.
 
 # Basic Functionality
 
@@ -117,14 +149,15 @@ In computer programming, [create, read, update, and delete (as an acronym CRUD)]
 
 # Evaluation
 
-*Throughput*, *Latency* under different *object size*, *concurrency*, *server total*.
+**Metrics**: *Throughput*, *Latency* under different *object size*, *concurrency*, *server total*.
 
-Suggested topics:
+**Suggested topics**:
 
 * How object size affects performance?
     * for a particular application, is there a best way to fit into OBS?
 * The main factors behind I/O latency?
     * Get latency distribution first.
+    * For evaluating percentile latency, s3bench is recommended.
 * What will happen when clients are crowded?
 * Why tests '**fail**'? (not terminate)
 * The outcome of scaling out (putting more servers into system)?
@@ -139,8 +172,9 @@ More insights are encouraged.
 
 # Future Readings
 
-Recent SNIA blog posts on Object Storage <http://sniablog.org/category/object-storage/>.
+- Recent SNIA blog posts on Object Storage <http://sniablog.org/category/object-storage/>.
 
-Enterprise level [Object Store comparison](http://gaul.org/object-store-comparison/).
+- Enterprise level [Object Store comparison](http://gaul.org/object-store-comparison/).
+- Build your own object storage system with Golang <https://github.com/stuarthu/go-implement-your-object-storage>.
 
-Zhan.Shi @ 2018
+Zhan.Shi @ 2017, 2018, 2019
