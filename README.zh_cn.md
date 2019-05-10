@@ -137,9 +137,9 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         git clone https://github.com/wasabi-tech/s3-benchmark.git
         go build s3-bechmark.go
         ```
-    * 原始版本可能编译失败，缺少依赖，可以用这个修补版本
+    * 原始版本可能编译失败，缺少依赖，兼容性不足，可以用这个修补版本
         ```bash
-        go get -u github.com/charz/s3-benchmark
+        go get -u github.com/chinglinwen/s3-benchmark
         ```
     * 命令行范例
         ```bash

@@ -117,7 +117,7 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
             -numClients=10 -numSamples=100 -objectSize=1024
         ```
     * Script example <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
-        
+      
     * Customize before using this script, for a broader coverage.
     
 * s3-benchmark <https://github.com/wasabi-tech/s3-benchmark>
@@ -126,9 +126,9 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
         git clone https://github.com/wasabi-tech/s3-benchmark.git
         go build s3-bechmark.go
         ```
-    * The original version may fail on building, use one of its fixed fork instead
+    * The original version may fail on building, or in-compatible with minio, use one of its fixed fork instead
         ```bash
-        go get -u github.com/charz/s3-benchmark
+        go get -u github.com/chinglinwen/s3-benchmark
         ```
     * Command line example
         ```bash
