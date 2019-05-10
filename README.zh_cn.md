@@ -112,8 +112,22 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
       * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
       * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 * S3 Bench <https://github.com/igneous-systems/s3bench>
-    * **安装** `go get -u github.com/igneous-systems/s3bench`
-    * 命令行范例 `./s3bench -accessKey=hust -accessSecret=hust2019 -bucket=loadgen -endpoint=http://127.0.0.1:9000 -numClients=10 -numSamples=100 -objectNamePrefix=loadgen -objectSize=1024`
+    * **安装**
+
+        ```bash
+        go get -u github.com/igneous-systems/s3bench
+        ```
+        
+    * 命令行范例
+
+        ```bash
+        ./s3bench \
+            -accessKey=hust -accessSecret=hust2019 \
+            -endpoint=http://127.0.0.1:9000 \
+            -bucket=loadgen -objectNamePrefix=loadgen \
+            -numClients=10 -numSamples=100 -objectSize=1024
+        ```
+        
     * 脚本范例 <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
         * 实际使用建议通过定制参数，设计循环结构实现批量测试，将结果重定向进文件用于后期分析
 * s3-benchmark <https://github.com/wasabi-tech/s3-benchmark>
@@ -127,7 +141,10 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
     * 命令行范例
     
         ```bash
-        ./s3-benchmark.ubuntu -a hust -s hust2019 -b benchmark-bucket -t 10 -u http://127.0.0.1:9000
+        ./s3-benchmark.ubuntu \
+            -a hust -s hust2019 \
+            -u http://127.0.0.1:9000 \
+            -b benchmark-bucket -t 10
         ```
 
 ## 各类已知问题
