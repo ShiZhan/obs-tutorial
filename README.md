@@ -132,10 +132,16 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
         ```
     * Command line example
         ```bash
-        ./s3-benchmark.ubuntu \
-            -a hust -s hust2019 \
-            -u http://127.0.0.1:9000 \
-            -b benchmark-bucket -t 10
+        s3-benchmark \
+            -a hust -s hust2019 -u http://127.0.0.1:9000 -b wasabi-benchmark \
+            -d 3 -t 1 -z 1K
+        Wasabi benchmark program v2.0
+        Parameters: url=http://127.0.0.1:9000, bucket=wasabi-benchmark, region=us-east-1, duration=3, threads=1, loops=1, size=1K
+        Loop 1: PUT time 3.0 secs, objects = 191, speed = 63.5KB/sec, 63.5 operations/sec. Slowdowns = 0
+        Loop 1: GET time 0.4 secs, objects = 191, speed = 449.9KB/sec, 449.9 operations/sec. Slowdowns = 0
+        Loop 1: DELETE time 0.5 secs, 367.2 deletes/sec. Slowdowns = 0
+        result title: name-concurrency-size, uloadspeed, downloadspeed
+        result csv: 127-1-1K,0.06,0.44
         ```
 
 ## Experiences and Problems
