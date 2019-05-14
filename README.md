@@ -75,26 +75,26 @@ Besides _Option 1_, _Option 2, 3_ offer compile-free executable.
 ## Object Storage Client
 
 * Standalone Utilities:
-    * Option 1: Minio Client <https://docs.minio.io/docs/minio-client-quickstart-guide>
+    * Option 1: **Minio Client** <https://docs.minio.io/docs/minio-client-quickstart-guide>
         * **Installation**: download and run
-    * Option 2: s3cmd <https://github.com/s3tools/s3cmd>
+    * Option 2: **s3cmd** <https://github.com/s3tools/s3cmd>
         * **Installation**: run `pip install s3cmd` in python environment
         * Configure for Minio <https://docs.minio.io/docs/s3cmd-with-minio>
-    * Option 3: aws-shell <https://github.com/awslabs/aws-shell>
+    * Option 3: **aws-shell** <https://github.com/awslabs/aws-shell>
         * **Installation**: run `pip install aws-shell` in python environment
         * Configure for Minio <https://docs.minio.io/docs/aws-cli-with-minio>
         * Official Manual <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
-    * Option 4: osm <https://github.com/appscode/osm>
+    * Option 4: **osm** <https://github.com/appscode/osm>
         * **Installation**: `go get -u github.com/appscode/osm`
 * APIs:
-    * Option 4: [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/)
-    * Option 5: [boto](https://github.com/boto/boto3)
+    * Option 4: **aws-sdk-java** <https://aws.amazon.com/cn/sdk-for-java/>
+    * Option 5: **boto** <https://github.com/boto/boto3>
 
-_Option 2 & 3_ are more general and versatile, both are widely used for various object storage services.
+Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* require Go.
 
 ## Object Storage Benchmark
 
-* COSBench <https://github.com/intel-cloud/cosbench>
+* Option 1: **COSBench** <https://github.com/intel-cloud/cosbench>
     * User Guide <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>.
     * Example workload <https://github.com/Zhan2012/obs-tutorial/raw/master/workload-example.xml>.
     * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
@@ -103,7 +103,7 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
       * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
       * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
     
-* S3 Bench <https://github.com/igneous-systems/s3bench>
+* Option 2: **S3 Bench** <https://github.com/igneous-systems/s3bench>
     * **Installation**
         ```bash
         go get -u github.com/igneous-systems/s3bench
@@ -117,16 +117,10 @@ _Option 2 & 3_ are more general and versatile, both are widely used for various 
             -numClients=10 -numSamples=100 -objectSize=1024
         ```
     * Script example <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
-      
-    * Customize before using this script, for a broader coverage.
+      * Customize before using this script, for a broader coverage.
     
-* s3-benchmark <https://github.com/wasabi-tech/s3-benchmark>
-    * **Installation**
-        ```bash
-        git clone https://github.com/wasabi-tech/s3-benchmark.git
-        go build s3-bechmark.go
-        ```
-    * The original version may fail on building, or in-compatible with minio, use one of its fixed fork instead
+* Option 3: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
+    * **Installation** The original version contains broken dependency, lacks minio support, use one of its fixed fork instead
         ```bash
         go get -u github.com/chinglinwen/s3-benchmark
         ```
