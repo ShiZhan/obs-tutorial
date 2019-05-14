@@ -1,13 +1,14 @@
 # How to Score
 
-| Component  | BASIC             | ADVANCED <sup>1</sup>  | HARD <sup>2</sup>   |
-| :---       | :---              | :---                   | :---                |
-| Server     | Minio Server      | s3proxy/mock-s3/...    | Swift/Ceph          |
-| Client     | Minio Client      | s3cmd/aws-{cli\|shell} | awssdk/boto3        |
-| Benchmark  | workload-sample   | select research topic  | programmed research |
+| Component             | BASIC           | ADVANCED <sup>1</sup>  | HARD <sup>2</sup>   |
+| :-------------------- | :-------------- | :--------------------- | :------------------ |
+| Server                | Minio Server    | s3proxy/mock-s3/...    | Swift/Ceph          |
+| Client                | Minio Client    | s3cmd/aws-{cli\|shell} | awssdk/boto3        |
+| Benchmark<sup>3</sup> | workload-sample | select research topic  | programmed research |
 
 1. **Limited in-class help**, with complete on-line resource provided in this repository.
 2. **Please advanture by yourself** beyond portals from this repository.
+3. s3bench/benchio/COSBench
 
 # Submiting your report
 
@@ -18,7 +19,7 @@
 
 ## Important Dates
 
-Submission Date: **2018-04-23**
+Submission Date: **2018-05-29**
 
 ## Late Submission
 
@@ -32,4 +33,4 @@ Refer to:
 
 ## Grace Days
 
-**1 week** (before labour's day, **2018-04-30**)
+**1 week** (**2018-06-05**)
