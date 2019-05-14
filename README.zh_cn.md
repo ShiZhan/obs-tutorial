@@ -80,30 +80,30 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
     * 选项 7: [Openstack Swift](https://wiki.openstack.org/wiki/Swift)，开箱即用容器版: <https://github.com/cs-course/openstack-swift-docker>。
     * 选项 8: [Ceph](https://ceph.com/)，开箱即用容器版: <https://github.com/ceph/ceph-container>。
 
-除初学用 _选项1_ 之外，_选项2,3_ 也提供免编译执行程序下载。
+除初学用 *选项1* 之外，*选项2,3* 也提供免编译执行程序下载。
 
 ## 对象存储客户端
 
 * 独立工具集:
-    * 选项 1: Minio Client <https://docs.minio.io/docs/minio-client-quickstart-guide>
-    * 选项 2: s3cmd <https://github.com/s3tools/s3cmd>
+    * 选项 1: **Minio Client** <https://docs.minio.io/docs/minio-client-quickstart-guide>
+    * 选项 2: **s3cmd** <https://github.com/s3tools/s3cmd>
         * 于Python环境中运行 `pip install s3cmd`
         * 为 Minio 配置 <https://docs.minio.io/docs/s3cmd-with-minio>
-    * 选项 3: aws-shell <https://github.com/awslabs/aws-shell>
+    * 选项 3: **aws-shell** <https://github.com/awslabs/aws-shell>
         * 于Python环境中运行 `pip install aws-shell`
         * 为 Minio 配置 <https://docs.minio.io/docs/aws-cli-with-minio>
         * 官方手册 <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
-    * 选项 4: osm <https://github.com/appscode/osm>
+    * 选项 4: **osm** <https://github.com/appscode/osm>
         * `go get -u github.com/appscode/osm`
-* APIs:
-    * 选项 4: [aws-sdk-java](https://aws.amazon.com/cn/sdk-for-java/)
-    * 选项 5: [boto](https://github.com/boto/boto3)
+* 编程 API:
+    * 选项 4: **aws-sdk-java** <https://aws.amazon.com/cn/sdk-for-java/>
+    * 选项 5: **boto** <https://github.com/boto/boto3>
 
-选项 2 & 3 更具通用性，已广泛用于各类云存储服务。
+*选项 1* 提供可执行文件，开箱即用，*选项 2 & 3* 需要 Python 环境，*选项 4* 需要 go 环境。
 
 ## 对象存储评测工具
 
-* COSBench <https://github.com/intel-cloud/cosbench>
+* 选项 1: **COSBench** <https://github.com/intel-cloud/cosbench>
     * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>
     * 负载范例 <https://github.com/cs-course/obs-tutorial/raw/master/workload-example.xml>
     * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>
@@ -111,15 +111,12 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
       * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
       * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
       * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
-* S3 Bench <https://github.com/igneous-systems/s3bench>
+* 选项 2: **S3 Bench** <https://github.com/igneous-systems/s3bench>
     * **安装**
-
         ```bash
         go get -u github.com/igneous-systems/s3bench
         ```
-        
     * 命令行范例
-
         ```bash
         ./s3bench \
             -accessKey=hust -accessSecret=hust2019 \
@@ -127,17 +124,11 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
             -bucket=loadgen -objectNamePrefix=loadgen \
             -numClients=10 -numSamples=100 -objectSize=1024
         ```
-        
     * 脚本范例 <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
       
         * 实际使用建议通过定制参数，设计循环结构实现批量测试，将结果重定向进文件用于后期分析
-* s3-benchmark <https://github.com/wasabi-tech/s3-benchmark>
-    * **安装**
-        ```bash
-        git clone https://github.com/wasabi-tech/s3-benchmark.git
-        go build s3-bechmark.go
-        ```
-    * 原始版本可能编译失败，缺少依赖，兼容性不足，可以用这个修补版本
+* 选项 3: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
+    * **安装** 原始版本未更新依赖，且兼容性不足，可以用这个修补版本
         ```bash
         go get -u github.com/chinglinwen/s3-benchmark
         ```
