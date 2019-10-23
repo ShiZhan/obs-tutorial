@@ -86,6 +86,7 @@ Besides _Option 1_, _Option 2, 3_ offer compile-free executable.
         * Official Manual <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
     * Option 4: **osm** <https://github.com/appscode/osm>
         * **Installation**: `go get -u github.com/appscode/osm`
+        * [Windows binary](https://share.weiyun.com/5ZOE0f9)
 * APIs:
     * Option 4: **aws-sdk-java** <https://aws.amazon.com/cn/sdk-for-java/>
     * Option 5: **boto** <https://github.com/boto/boto3>

@@ -95,6 +95,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         * 官方手册 <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
     * 选项 4: **osm** <https://github.com/appscode/osm>
         * `go get -u github.com/appscode/osm`
+        * [Windows版执行程序](https://share.weiyun.com/5ZOE0f9)
 * 编程 API:
     * 选项 4: **aws-sdk-java** <https://aws.amazon.com/cn/sdk-for-java/>
     * 选项 5: **boto** <https://github.com/boto/boto3>
