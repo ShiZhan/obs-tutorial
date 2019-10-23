@@ -1,4 +1,4 @@
-minio.exe
+*.exe
 config.json
 certs/
 root/
