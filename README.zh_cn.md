@@ -116,17 +116,24 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         ```bash
         go get -u github.com/igneous-systems/s3bench
         ```
+        
+        * Linux: 编译文件缺省位置在 `~/go/bin/s3bench`
+        * [预编译Windows执行程序](https://share.weiyun.com/56Tpl30)，需下载放置在本资料库所在目录中。
+        
     * 命令行范例
+    
         ```bash
-        ./s3bench \
+        s3bench \
             -accessKey=hust -accessSecret=hust2019 \
             -endpoint=http://127.0.0.1:9000 \
             -bucket=loadgen -objectNamePrefix=loadgen \
             -numClients=10 -numSamples=100 -objectSize=1024
         ```
-    * 脚本范例 <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
+    
+    * [脚本范例](./run-s3bench.sh)
       
-        * 实际使用建议通过定制参数，设计循环结构实现批量测试，将结果重定向进文件用于后期分析
+        - 实际使用建议通过定制参数，设计循环结构实现批量测试，将结果重定向进文件用于后期分析。
+        - [Windows版](./run-s3bench.cmd)
 * 选项 3: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
     * **安装** 原始版本未更新依赖，且兼容性不足，可以用这个修补版本
         ```bash

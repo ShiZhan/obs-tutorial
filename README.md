@@ -108,16 +108,24 @@ Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* requi
         ```bash
         go get -u github.com/igneous-systems/s3bench
         ```
+        
+        * Linux: default location for built binary is `~/go/bin/s3bench`
+        * [Prebuilt Windows binary](https://share.weiyun.com/56Tpl30), download and put into this directory.
+        
     * Command line example
+      
         ```bash
-        ./s3bench \
+        s3bench \
             -accessKey=hust -accessSecret=hust2019 \
             -endpoint=http://127.0.0.1:9000 \
             -bucket=loadgen -objectNamePrefix=loadgen \
             -numClients=10 -numSamples=100 -objectSize=1024
         ```
-    * Script example <https://github.com/cs-course/obs-tutorial/raw/master/run-s3bench.sh>
+        
+    * [Script example](./run-s3bench.sh)
+      
       * Customize before using this script, for a broader coverage.
+      * [Windows version](./run-s3bench.cmd)
     
 * Option 3: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
     * **Installation** The original version contains broken dependency, lacks minio support, use one of its fixed fork instead
