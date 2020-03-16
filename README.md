@@ -60,7 +60,7 @@ Better run within docker, refer to Docker tutorial <https://github.com/cs-course
     * Option 1: [Minio](https://minio.io/), latest version <https://minio.io/downloads.html>.
 * Experimental Mock Servers:
     * Option 2: [mock-s3](https://github.com/jserver/mock-s3), a Python clone of fake-s3. **Requires Python 2.7**.
-        * Option 2.1: **Python 3 migrating, maybe BUGGY** <https://github.com/Zhan2012/mock-s3>.
+        * Option 2.1: **Python 3 version** <https://github.com/Zhan2012/mock-s3>.
     * Option 3: [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**
         * Option 3.1: Use Java/Maven to build `mvn package -Dmaven.test.skip=true`.
     * Option 4: [fake-s3](https://github.com/jubos/fake-s3), a lightweight server clone of Amazon S3. **Depends on Ruby**, the Origin project.
