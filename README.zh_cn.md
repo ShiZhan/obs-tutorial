@@ -125,7 +125,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
     
         ```bash
         s3bench \
-            -accessKey=hust -accessSecret=hust2019 \
+            -accessKey=hust -accessSecret=hust_obs \
             -endpoint=http://127.0.0.1:9000 \
             -bucket=loadgen -objectNamePrefix=loadgen \
             -numClients=10 -numSamples=100 -objectSize=1024
@@ -143,7 +143,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
     * 命令行范例
         ```bash
         s3-benchmark \
-            -a hust -s hust2019 -u http://127.0.0.1:9000 -b wasabi-benchmark \
+            -a hust -s hust_obs -u http://127.0.0.1:9000 -b wasabi-benchmark \
             -d 3 -t 1 -z 1K
         Wasabi benchmark program v2.0
         Parameters: url=http://127.0.0.1:9000, bucket=wasabi-benchmark, region=us-east-1, duration=3, threads=1, loops=1, size=1K
