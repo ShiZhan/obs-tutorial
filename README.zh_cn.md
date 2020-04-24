@@ -23,6 +23,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 
 - [bitbucket](https://bitbucket.org/)
 - [gitlab](https://about.gitlab.com/)
+- [码云](https://gitee.com/)
 
 ### Python怎么搞定
 
@@ -36,7 +37,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 
 ### Java怎么搞定
 
-**同学期课程**: Java语言程序设计, [2018-2019 第2学期 3~8周](http://jwc.hust.edu.cn/info/1161/6721.htm)
+**同学期课程**: Java语言程序设计, [2019-2020 第2学期](http://jwc.hust.edu.cn/info/1161/7796.htm)
 
 一些安装辅助脚本 <https://github.com/Zhan2012/java-bundle> (_**给喜欢自己琢磨的同学参考**_)
 

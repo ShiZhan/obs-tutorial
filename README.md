@@ -19,7 +19,7 @@ The **Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) 
 
 Git tutorial <https://github.com/cs-course/git-tutorial>.
 
-Alternatives: [bitbucket](https://bitbucket.org/), [gitlab](https://about.gitlab.com/).
+Alternatives: [bitbucket](https://bitbucket.org/), [gitlab](https://about.gitlab.com/), [gitee](https://gitee.com/).
 
 ### How to establish Python Environment
 
@@ -33,7 +33,7 @@ Alternatives: [bitbucket](https://bitbucket.org/), [gitlab](https://about.gitlab
 
 ### How to establish Java Environment
 
-**Ongoing course**: Java Programming, [2018-2019 2nd semester](http://jwc.hust.edu.cn/info/1161/6721.htm), just follow your teacher's guide.
+**Ongoing course**: Java Programming, [2019-2020 2nd semester](http://jwc.hust.edu.cn/info/1161/7796.htm), just follow your teacher's guide.
 
 Installation helper scripts <https://github.com/Zhan2012/java-bundle> (_**For adventurers**_).
 
