@@ -70,8 +70,8 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * 初学者:
     * 选项 1: [Minio](https://minio.io/), 最新版 <https://minio.io/downloads.html>。
 * 实验性模拟服务程序:
-    * 选项 2: [mock-s3](https://github.com/jserver/mock-s3)，用Python重写fake-s3。**需要Python 2.7**。
-        * 选项 2.1: **Python 3版** <https://github.com/Zhan2012/mock-s3>。
+    * 选项 2: [mock-s3](https://github.com/Zhan2012/mock-s3)，用Python重写fake-s3模仿Amazon S3。
+        * 选项 2.1: 原始版**需要Python 2.7** <https://github.com/jserver/mock-s3>。
     * 选项 3: [s3proxy](https://github.com/gaul/s3proxy)，为各类存储提供S3 API。**预编译包[猛击此处](https://github.com/gaul/s3proxy/releases)**
         * 选项 3.1: 自己用Java/Maven从源码构建 `mvn package -Dmaven.test.skip=true`。
     * 选项 4: [fake-s3](https://github.com/jubos/fake-s3)，Amazon S3轻量级模仿。**需要Ruby**，首个S3克隆项目。
