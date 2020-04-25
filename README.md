@@ -164,6 +164,8 @@ In computer programming, [create, read, update, and delete (as an acronym CRUD)]
 | Update (Modify)  | UPDATE | PUT / POST / PATCH |
 | Delete (Destroy) | DELETE | DELETE             |
 
+Try object storage in some applciations: [zfile](https://github.com/zhaojun1998/zfile).
+
 # Evaluation
 
 **Metrics**: *Throughput*, *Latency* under different *object size*, *concurrency*, *server total*.
@@ -194,4 +196,4 @@ More insights are encouraged.
 - Enterprise level [Object Store comparison](http://gaul.org/object-store-comparison/).
 - Build your own object storage system with Golang <https://github.com/stuarthu/go-implement-your-object-storage>.
 
-Zhan.Shi @ 2017, 2018, 2019
+Zhan.Shi @ 2017, 2018, 2019, 2020

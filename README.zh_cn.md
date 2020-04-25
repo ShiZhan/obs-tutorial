@@ -172,6 +172,8 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 | Update (Modify)  | UPDATE | PUT / POST / PATCH |
 | Delete (Destroy) | DELETE | DELETE             |
 
+在实际应用里面试一试：[zfile](https://github.com/zhaojun1998/zfile)。
+
 # 评测
 
 指标：*吞吐率Throughput*、*延迟Latency*，以及环境参数：*对象尺寸object size*、*并发性*、*服务器数量*。
@@ -201,4 +203,4 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * 企业级 [对象存储比较](http://gaul.org/object-store-comparison/)
 * [用Go语言自制对象存储系统](https://github.com/stuarthu/go-implement-your-object-storage)
 
-Zhan.Shi @ 2017, 2018, 2019
+Zhan.Shi @ 2017, 2018, 2019, 2020
