@@ -1,4 +1,6 @@
 *.exe
+minio
+osm.conf
 config.json
 certs/
 root/
