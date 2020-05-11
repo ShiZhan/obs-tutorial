@@ -27,4 +27,4 @@ $osm --osmconfig $SCRIPT_DIR/osm.conf \
     config view
 
 # Prepare alias for simplified command line
-alias osm='osm --osmconfig $SCRIPT_DIR/osm.conf'
+alias osm="osm --osmconfig $SCRIPT_DIR/osm.conf"
