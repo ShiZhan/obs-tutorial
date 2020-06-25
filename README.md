@@ -27,7 +27,7 @@ Alternatives: [bitbucket](https://bitbucket.org/), [gitlab](https://about.gitlab
     * Option 1: [Anaconda](https://www.anaconda.com/)
     * Option 2: [WinPython](http://winpython.github.io/)
 * Fast deployment by docker:
-    * Option 3: Python Docker <https://github.com/Zhan2012/python-lab>, E.g.:
+    * Option 3: Python Docker <https://github.com/cs-course/python-lab>, E.g.:
         * `docker pull zhan2016/python-lab:3.6.0`
         * `docker login daocloud.io && docker pull daocloud.io/zhan2016/python-lab:master-31a932d`
 
@@ -35,7 +35,7 @@ Alternatives: [bitbucket](https://bitbucket.org/), [gitlab](https://about.gitlab
 
 **Ongoing course**: Java Programming, [2019-2020 2nd semester](http://jwc.hust.edu.cn/info/1161/7796.htm), just follow your teacher's guide.
 
-Installation helper scripts <https://github.com/Zhan2012/java-bundle> (_**For adventurers**_).
+Installation helper scripts <https://github.com/ShiZhan/java-bundle> (_**For adventurers**_).
 
 ### How to use Linux in Windows or MacOS (_**Optional**_)
 
@@ -59,7 +59,7 @@ Better run within docker, refer to Docker tutorial <https://github.com/cs-course
 * Object Storage for Beginners:
     * Option 1: [Minio](https://minio.io/), latest version <https://minio.io/downloads.html>.
 * Experimental Mock Servers:
-    * Option 2: [mock-s3](https://github.com/Zhan2012/mock-s3), a Python clone of fake-s3, Amazon S3 mimic.
+    * Option 2: [mock-s3](https://github.com/ShiZhan/mock-s3), a Python clone of fake-s3, Amazon S3 mimic.
         * Option 2.1: Original version **Requires Python 2.7** <https://github.com/jserver/mock-s3>.
     * Option 3: [s3proxy](https://github.com/gaul/s3proxy), access other storage via the S3 API. **Binary bundles [here](https://github.com/gaul/s3proxy/releases)**
         * Option 3.1: Use Java/Maven to build `mvn package -Dmaven.test.skip=true`.
@@ -97,7 +97,7 @@ Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* requi
 
 * Option 1: **COSBench** <https://github.com/intel-cloud/cosbench>
     * User Guide <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>.
-    * Example workload <https://github.com/Zhan2012/obs-tutorial/raw/master/workload-example.xml>.
+    * Example workload <https://github.com/ShiZhan/obs-tutorial/raw/master/workload-example.xml>.
     * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
     * Literatures
       * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
@@ -150,8 +150,8 @@ Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* requi
 ## Experiences and Problems
 
 - [Known issues](known-issues.md).
-- Contribute your experiences in <https://github.com/Zhan2012/obs-tutorial/wiki>.
-- Report more problems in <https://github.com/Zhan2012/obs-tutorial/issues>.
+- Contribute your experiences in <https://github.com/ShiZhan/obs-tutorial/wiki>.
+- Report more problems in <https://github.com/ShiZhan/obs-tutorial/issues>.
 
 # Basic Functionality
 

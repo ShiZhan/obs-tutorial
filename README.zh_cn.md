@@ -31,7 +31,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
     * 选项 1: [Anaconda](https://www.anaconda.com/)
     * 选项 2: [WinPython](http://winpython.github.io/)
 * 用容器快速部署 (_**可选**_)
-    * 选项 3: Python Docker <https://github.com/Zhan2012/python-lab>
+    * 选项 3: Python Docker <https://github.com/cs-course/python-lab>
         * dockerhub (docker大本营) `docker pull zhan2016/python-lab:3.6.0`
         * daocloud (国内平台) `docker login daocloud.io && docker pull daocloud.io/zhan2016/python-lab:master-31a932d`
 
@@ -39,7 +39,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 
 **同学期课程**: Java语言程序设计, [2019-2020 第2学期](http://jwc.hust.edu.cn/info/1161/7796.htm)
 
-一些安装辅助脚本 <https://github.com/Zhan2012/java-bundle> (_**给喜欢自己琢磨的同学参考**_)
+一些安装辅助脚本 <https://github.com/ShiZhan/java-bundle> (_**给喜欢自己琢磨的同学参考**_)
 
 ### Go怎么搞定
 
@@ -70,7 +70,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * 初学者:
     * 选项 1: [Minio](https://minio.io/), 最新版 <https://minio.io/downloads.html>。
 * 实验性模拟服务程序:
-    * 选项 2: [mock-s3](https://github.com/Zhan2012/mock-s3)，用Python重写fake-s3模仿Amazon S3。
+    * 选项 2: [mock-s3](https://github.com/ShiZhan/mock-s3)，用Python重写fake-s3模仿Amazon S3。
         * 选项 2.1: 原始版**需要Python 2.7** <https://github.com/jserver/mock-s3>。
     * 选项 3: [s3proxy](https://github.com/gaul/s3proxy)，为各类存储提供S3 API。**预编译包[猛击此处](https://github.com/gaul/s3proxy/releases)**
         * 选项 3.1: 自己用Java/Maven从源码构建 `mvn package -Dmaven.test.skip=true`。
