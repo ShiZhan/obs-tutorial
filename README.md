@@ -86,7 +86,7 @@ Besides _Option 1_, _Option 2, 3_ offer compile-free executable.
         * Official Manual <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
     * Option 4: **osm** <https://github.com/appscode/osm>
         * **Installation**: `go get -u github.com/appscode/osm`
-        * [Windows binary](https://share.weiyun.com/5ZOE0f9)
+        * [Windows binary](https://share.weiyun.com/jPYFmvmw)
 * APIs:
     * Option 4: **aws-sdk-java** <https://aws.amazon.com/cn/sdk-for-java/>
     * Option 5: **boto** <https://github.com/boto/boto3>
@@ -111,7 +111,7 @@ Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* requi
         ```
         
         * Linux: default location for built binary is `~/go/bin/s3bench`
-        * [Prebuilt Windows binary](https://share.weiyun.com/56Tpl30), download and put into this directory.
+        * [Prebuilt Windows binary](https://share.weiyun.com/BICMfA4G), download and put into this directory.
         
     * Command line example
       

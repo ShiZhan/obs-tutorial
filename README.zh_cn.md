@@ -96,7 +96,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         * 官方手册 <https://docs.aws.amazon.com/cli/latest/userguide/using-s3-commands.html>
     * 选项 4: **osm** <https://github.com/appscode/osm>
         * `go get -u github.com/appscode/osm`
-        * [Windows版执行程序](https://share.weiyun.com/5ZOE0f9)
+        * [Windows版执行程序](https://share.weiyun.com/jPYFmvmw)
 * 编程 API:
     * 选项 4: **aws-sdk-java** <https://aws.amazon.com/cn/sdk-for-java/>
     * 选项 5: **boto** <https://github.com/boto/boto3>
@@ -120,7 +120,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         ```
         
         * Linux: 编译文件缺省位置在 `~/go/bin/s3bench`
-        * [预编译Windows执行程序](https://share.weiyun.com/56Tpl30)，需下载放置在本资料库所在目录中。
+        * [预编译Windows执行程序](https://share.weiyun.com/BICMfA4G)，需下载放置在本资料库所在目录中。
         
     * 命令行范例
     
