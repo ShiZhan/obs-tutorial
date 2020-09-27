@@ -6,6 +6,7 @@
 @rem -numSamples=256   Test with 256 objects.
 @rem -objectNamePrefix=loadgen Name prefix of test objects.
 @rem -objectSize=1024          Size of test objects.
+@rem -verbose          Print latency for every request.
 
 s3bench.exe ^
     -accessKey=hust ^

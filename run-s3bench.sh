@@ -16,6 +16,7 @@ fi
 # -numSamples=256   Test with 256 objects.
 # -objectNamePrefix=loadgen Name prefix of test objects.
 # -objectSize=1024          Size of test objects.
+# -verbose          Print latency for every request.
 
 $s3bench \
     -accessKey=hust \

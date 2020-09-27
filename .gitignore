@@ -1,5 +1,7 @@
 *.exe
 minio
+osm
+s3bench
 osm.conf
 config.json
 certs/
