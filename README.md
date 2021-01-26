@@ -11,11 +11,11 @@ SNIA Tutorials on Object Storage:
 
 The **Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) is a not–for–profit global organization, made up of member companies spanning the global storage market.
 
-# Preparation
+# Lab1: Preparation
 
 ## Environment
 
-### Git and Github
+### Git and Repository
 
 Git tutorial <https://github.com/cs-course/git-tutorial>.
 
@@ -93,19 +93,26 @@ Besides _Option 1_, _Option 2, 3_ offer compile-free executable.
 
 Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* require Go.
 
+## Basic Functionality
+
+In computer programming, [create, read, update, and delete (as an acronym CRUD)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) are the four basic functions of persistent storage.
+
+|    Operation     |  SQL   |        HTTP        |
+| :--------------: | :----: | :----------------: |
+|      Create      | INSERT |     PUT / POST     |
+| Read (Retrieve)  | SELECT |        GET         |
+| Update (Modify)  | UPDATE | PUT / POST / PATCH |
+| Delete (Destroy) | DELETE |       DELETE       |
+
+Try object storage in some applications: [zfile](https://github.com/zhaojun1998/zfile).
+
+# Lab2: Performance Evaluation
+
 ## Object Storage Benchmark
 
-* Option 1: **COSBench** <https://github.com/intel-cloud/cosbench>
-    * User Guide <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>.
-    * Example workload <https://github.com/ShiZhan/obs-tutorial/raw/master/workload-example.xml>.
-    * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
-    * Literatures
-      * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
-      * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
-      * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
-    
-* Option 2: **S3 Bench** <https://github.com/igneous-systems/s3bench>
+* Option 1: **S3 Bench** <https://github.com/igneous-systems/s3bench>
     * **Installation**
+        
         ```bash
         go get -u github.com/igneous-systems/s3bench
         ```
@@ -128,8 +135,9 @@ Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* requi
       * Customize before using this script, for a broader coverage.
       * [Windows version](./run-s3bench.cmd)
     
-* Option 3: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
+* Option 2: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
     * **Installation** The original version contains broken dependency, lacks minio support, use one of its fixed fork instead
+        
         ```bash
         go get -u github.com/chinglinwen/s3-benchmark
         ```
@@ -147,26 +155,17 @@ Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* requi
         result csv: 127-1-1K,0.06,0.44
         ```
 
-## Experiences and Problems
+* Option 3: **COSBench** <https://github.com/intel-cloud/cosbench>
+  * User Guide <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>.
+  * Example workload <https://github.com/ShiZhan/obs-tutorial/raw/master/workload-example.xml>.
+  * Other examples <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>.
+  * Literatures
+    * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
+    * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
+    * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
-- [Known issues](known-issues.md).
-- Contribute your experiences in <https://github.com/ShiZhan/obs-tutorial/wiki>.
-- Report more problems in <https://github.com/ShiZhan/obs-tutorial/issues>.
 
-# Basic Functionality
-
-In computer programming, [create, read, update, and delete (as an acronym CRUD)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) are the four basic functions of persistent storage.
-
-| Operation        | SQL    | HTTP               |
-| :---:            | :---:  | :---:              |
-| Create           | INSERT | PUT / POST         |
-| Read (Retrieve)  | SELECT | GET                |
-| Update (Modify)  | UPDATE | PUT / POST / PATCH |
-| Delete (Destroy) | DELETE | DELETE             |
-
-Try object storage in some applciations: [zfile](https://github.com/zhaojun1998/zfile).
-
-# Evaluation
+## Observation
 
 **Metrics**: *Throughput*, *Latency* under different *object size*, *concurrency*, *server total*.
 
@@ -189,6 +188,24 @@ More insights are encouraged.
 * Using Python as Lab Platform
     * Jupyter Notebook Tutorial <https://github.com/cs-course/jupyter-tutorial>
 
+# Lab3: Tail Latency Challenge
+
+## Prediction
+
+Start from queueing Theory
+
+## Solution
+
+Repeat
+
+Replica
+
+# Experiences and Problems
+
+- [Known issues](known-issues.md).
+- Contribute your experiences in <https://github.com/ShiZhan/obs-tutorial/wiki>.
+- Report more problems in <https://github.com/ShiZhan/obs-tutorial/issues>.
+
 # Future Readings
 
 - Recent SNIA blog posts on Object Storage <http://sniablog.org/category/object-storage/>.
@@ -196,4 +213,4 @@ More insights are encouraged.
 - Enterprise level [Object Store comparison](http://gaul.org/object-store-comparison/).
 - Build your own object storage system with Golang <https://github.com/stuarthu/go-implement-your-object-storage>.
 
-Zhan.Shi @ 2017, 2018, 2019, 2020
+Zhan.Shi @ 2017, 2018, 2019, 2020, 2021

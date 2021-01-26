@@ -11,11 +11,11 @@
 
 **网络存储工业协会 Storage Networking Industry Association** ([SNIA](https://www.snia.org/)) 是由来自于全球存储市场的众多企业组建的全球性非盈利组织。
 
-# 准备工作
+# 实验一：系统搭建
 
 ## 基础环境
 
-### Git和Github
+### 代码管理和仓库
 
 Git tutorial <https://github.com/cs-course/git-tutorial>
 
@@ -103,17 +103,24 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 
 *选项 1* 提供可执行文件，开箱即用，*选项 2 & 3* 需要 Python 环境，*选项 4* 需要 go 环境。
 
+## 基本功能
+
+在计算机领域中，[create, read, update, and delete (缩写为 CRUD)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) 是访问持久存储的4项基本操作。
+
+|    Operation     |  SQL   |        HTTP        |
+| :--------------: | :----: | :----------------: |
+|      Create      | INSERT |     PUT / POST     |
+| Read (Retrieve)  | SELECT |        GET         |
+| Update (Modify)  | UPDATE | PUT / POST / PATCH |
+| Delete (Destroy) | DELETE |       DELETE       |
+
+在实际应用里面试一试：[zfile](https://github.com/zhaojun1998/zfile)。
+
+# 实验二：性能观测
+
 ## 对象存储评测工具
 
-* 选项 1: **COSBench** <https://github.com/intel-cloud/cosbench>
-    * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>
-    * 负载范例 <https://github.com/cs-course/obs-tutorial/raw/master/workload-example.xml>
-    * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>
-    * 文献
-      * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
-      * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
-      * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
-* 选项 2: **S3 Bench** <https://github.com/igneous-systems/s3bench>
+* 选项 1: **S3 Bench** <https://github.com/igneous-systems/s3bench>
     * **安装**
         ```bash
         go get -u github.com/igneous-systems/s3bench
@@ -136,8 +143,9 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
       
         - 实际使用建议通过定制参数，设计循环结构实现批量测试，将结果重定向进文件用于后期分析。
         - [Windows版](./run-s3bench.cmd)
-* 选项 3: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
+* 选项 2: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
     * **安装** 原始版本未更新依赖，且兼容性不足，可以用这个修补版本
+      
         ```bash
         go get -u github.com/chinglinwen/s3-benchmark
         ```
@@ -155,36 +163,26 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         result csv: 127-1-1K,0.06,0.44
         ```
 
-## 各类已知问题
+* 选项 3: **COSBench** <https://github.com/intel-cloud/cosbench>
+  * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>
+  * 负载范例 <https://github.com/cs-course/obs-tutorial/raw/master/workload-example.xml>
+  * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>
+  * 文献
+    * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
+    * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
+    * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
-* 安装使用过程中的各种["坑"](known-issues.md)
-* 经验分享<https://github.com/cs-course/obs-tutorial/wiki>
-* 问题报告<https://github.com/cs-course/obs-tutorial/issues>
-
-# 基本功能
-
-在计算机领域中，[create, read, update, and delete (缩写为 CRUD)](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) 是访问持久存储的4项基本操作。
-
-| Operation        | SQL    | HTTP               |
-| :---:            | :---:  | :---:              |
-| Create           | INSERT | PUT / POST         |
-| Read (Retrieve)  | SELECT | GET                |
-| Update (Modify)  | UPDATE | PUT / POST / PATCH |
-| Delete (Destroy) | DELETE | DELETE             |
-
-在实际应用里面试一试：[zfile](https://github.com/zhaojun1998/zfile)。
-
-# 评测
+## 标准测试
 
 指标：*吞吐率Throughput*、*延迟Latency*，以及环境参数：*对象尺寸object size*、*并发性*、*服务器数量*。
 
 建议思考:
 
 * 对象尺寸如何影响性能?
-    * 对于熟悉的某类应用，根据其数据访问特性，怎样适配对象存储最合适?
+  * 对于熟悉的某类应用，根据其数据访问特性，怎样适配对象存储最合适?
 * I/O 延迟背后的关键影响要素?
-    * 首先要采集全面的 I/O 延迟观测数据。
-    * 百分位延迟观测需使用s3bench，然后即可分析尾延迟影响因素。
+  * 首先要采集全面的 I/O 延迟观测数据。
+  * 百分位延迟观测需使用s3bench，然后即可分析尾延迟影响因素。
 * 如果客户端爆满将怎样?
 * 测试项为何出现 '**fail**'? (不是 terminate)
 * 横向扩展系统 (Scaling Out) 效果如何 (向系统中追加更多存储服务器)?
@@ -195,7 +193,25 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 
 * 前述实验如何自己编程实现 (不借助于 COSBench、s3bench)?
 * 把 Python 当作自己的实验台
-    * Jupyter Notebook Tutorial <https://github.com/cs-course/jupyter-tutorial>
+  * Jupyter Notebook Tutorial <https://github.com/cs-course/jupyter-tutorial>
+
+# 实验三：尾延迟挑战
+
+## 怎样预测
+
+排队论
+
+## 尝试应对
+
+重试
+
+副本
+
+# 已知问题
+
+* 安装使用过程中的各种["坑"](known-issues.md)
+* 经验分享<https://github.com/cs-course/obs-tutorial/wiki>
+* 问题报告<https://github.com/cs-course/obs-tutorial/issues>
 
 # 扩展资料
 
@@ -203,4 +219,4 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * 企业级 [对象存储比较](http://gaul.org/object-store-comparison/)
 * [用Go语言自制对象存储系统](https://github.com/stuarthu/go-implement-your-object-storage)
 
-Zhan.Shi @ 2017, 2018, 2019, 2020
+Zhan.Shi @ 2017, 2018, 2019, 2020, 2021
