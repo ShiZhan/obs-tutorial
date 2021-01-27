@@ -130,7 +130,6 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         * [预编译Windows执行程序](https://share.weiyun.com/BICMfA4G)，需下载放置在本资料库所在目录中。
         
     * 命令行范例
-    
         ```bash
         s3bench \
             -accessKey=hust -accessSecret=hust_obs \
@@ -138,14 +137,13 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
             -bucket=loadgen -objectNamePrefix=loadgen \
             -numClients=10 -numSamples=100 -objectSize=1024
         ```
-    
+
     * [脚本范例](./run-s3bench.sh)
-      
         - 实际使用建议通过定制参数，设计循环结构实现批量测试，将结果重定向进文件用于后期分析。
         - [Windows版](./run-s3bench.cmd)
+
 * 选项 2: **s3-benchmark** <https://github.com/wasabi-tech/s3-benchmark>
     * **安装** 原始版本未更新依赖，且兼容性不足，可以用这个修补版本
-      
         ```bash
         go get -u github.com/chinglinwen/s3-benchmark
         ```
@@ -164,13 +162,13 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         ```
 
 * 选项 3: **COSBench** <https://github.com/intel-cloud/cosbench>
-  * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>
-  * 负载范例 <https://github.com/cs-course/obs-tutorial/raw/master/workload-example.xml>
-  * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>
-  * 文献
-    * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
-    * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
-    * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
+    * 指南 <https://github.com/intel-cloud/cosbench/raw/master/COSBenchUserGuide.pdf>
+    * 负载范例 <https://github.com/cs-course/obs-tutorial/raw/master/workload-example.xml>
+    * 其余范例 <https://github.com/open-io/dockerfiles/tree/master/cosbench-openio/examples>
+    * 文献
+        * COSBench: cloud object storage benchmark https://dl.acm.org/citation.cfm?doid=2479871.2479900
+        * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
+        * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
 ## 标准测试
 
@@ -179,10 +177,10 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 建议思考:
 
 * 对象尺寸如何影响性能?
-  * 对于熟悉的某类应用，根据其数据访问特性，怎样适配对象存储最合适?
+    * 对于熟悉的某类应用，根据其数据访问特性，怎样适配对象存储最合适?
 * I/O 延迟背后的关键影响要素?
-  * 首先要采集全面的 I/O 延迟观测数据。
-  * 百分位延迟观测需使用s3bench，然后即可分析尾延迟影响因素。
+    * 首先要采集全面的 I/O 延迟观测数据。
+    * 百分位延迟观测需使用s3bench，然后即可分析尾延迟影响因素。
 * 如果客户端爆满将怎样?
 * 测试项为何出现 '**fail**'? (不是 terminate)
 * 横向扩展系统 (Scaling Out) 效果如何 (向系统中追加更多存储服务器)?
@@ -218,5 +216,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * 对象存储方面 SNIA 最新博文 <http://sniablog.org/category/object-storage/>
 * 企业级 [对象存储比较](http://gaul.org/object-store-comparison/)
 * [用Go语言自制对象存储系统](https://github.com/stuarthu/go-implement-your-object-storage)
+* Delimitrou C, Kozyrakis C. Amdahl’s Law for Tail Latency[J]. Commun. ACM, 2018, 61(8): 65–72.
+* Dean J, Barroso L A. The Tail at Scale[J]. Commun. ACM, 2013, 56(2): 74–80.
 
-Zhan.Shi @ 2017, 2018, 2019, 2020, 2021
+[Zhan.Shi](https://shizhan.github.io/) @ 2017, 2018, 2019, 2020, 2021

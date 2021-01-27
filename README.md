@@ -209,8 +209,9 @@ Replica
 # Future Readings
 
 - Recent SNIA blog posts on Object Storage <http://sniablog.org/category/object-storage/>.
-
 - Enterprise level [Object Store comparison](http://gaul.org/object-store-comparison/).
 - Build your own object storage system with Golang <https://github.com/stuarthu/go-implement-your-object-storage>.
+- Delimitrou C, Kozyrakis C. Amdahl’s Law for Tail Latency[J]. Commun. ACM, 2018, 61(8): 65–72.
+- Dean J, Barroso L A. The Tail at Scale[J]. Commun. ACM, 2013, 56(2): 74–80.
 
-Zhan.Shi @ 2017, 2018, 2019, 2020, 2021
+[Zhan.Shi](https://shizhan.github.io/) @ 2017, 2018, 2019, 2020, 2021
