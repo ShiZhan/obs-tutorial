@@ -170,8 +170,8 @@ Try object storage in some applications: [zfile](https://github.com/zhaojun1998/
     * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
 * Option 4: **s3-bench-rs** <https://github.com/SKTT1Ryze/s3-bench-rs> or <https://github.com/cs-course/obs-tutorial-rs>. 
-    * User Guide: todo
-    * Examples: todo
+    * User Guide: <https://github.com/cs-course/obs-tutorial-rs/blob/main/README.md>
+    * Examples: <https://github.com/cs-course/obs-tutorial-rs/tree/main/benches>
 
 ## Observation
 
