@@ -48,6 +48,10 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * 经典书籍 <https://github.com/Unknwon/the-way-to-go_ZH_CN>
 * 学习资料荟萃 <https://github.com/uhub/awesome-go>
 
+### Rust怎么搞定
+* 安装Rust: <https://kaisery.github.io/trpl-zh-cn/ch01-01-installation.html>
+* 学习Rust: <https://kaisery.github.io/trpl-zh-cn/>
+
 ### 怎么在Windows或者MacOS里面跑Linux (_**可选**_)
 
 **目的**: 计划无伤尝试 mock-s3 或 s3proxy
@@ -100,8 +104,9 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
 * 编程 API:
     * 选项 4: **aws-sdk-java** <https://aws.amazon.com/cn/sdk-for-java/>
     * 选项 5: **boto** <https://github.com/boto/boto3>
+    * 选项 6: **aws-sdk-rust** <https://github.com/awslabs/aws-sdk-rust>
 
-*选项 1* 提供可执行文件，开箱即用，*选项 2 & 3* 需要 Python 环境，*选项 4* 需要 go 环境。
+*选项 1* 提供可执行文件，开箱即用，*选项 2 & 3* 需要 Python 环境，*选项 4* 需要 go 环境，*选项 6* 需要 Rust 环境。
 
 ## 基本功能
 
@@ -170,6 +175,9 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
         * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
+* 选项 4: **s3-bench-rs** <https://github.com/SKTT1Ryze/s3-bench-rs> 或者 <https://github.com/cs-course/obs-tutorial-rs>
+    * 指南: todo
+    * 范例: todo
 ## 标准测试
 
 指标：*吞吐率Throughput*、*延迟Latency*，以及环境参数：*对象尺寸object size*、*并发性*、*服务器数量*。

@@ -37,6 +37,10 @@ Alternatives: [bitbucket](https://bitbucket.org/), [gitlab](https://about.gitlab
 
 Installation helper scripts <https://github.com/ShiZhan/java-bundle> (_**For adventurers**_).
 
+
+### How to establish Rust Environment
+* Installing Rust: <https://kaisery.github.io/trpl-zh-cn/ch01-01-installation.html>
+* Learning Rust: <https://kaisery.github.io/trpl-zh-cn/>
 ### How to use Linux in Windows or MacOS (_**Optional**_)
 
 **Goal**: try mock-s3 and s3proxy with less trouble
@@ -90,8 +94,9 @@ Besides _Option 1_, _Option 2, 3_ offer compile-free executable.
 * APIs:
     * Option 4: **aws-sdk-java** <https://aws.amazon.com/cn/sdk-for-java/>
     * Option 5: **boto** <https://github.com/boto/boto3>
+    * Option 6: **aws-sdk-rust** <https://github.com/awslabs/aws-sdk-rust>
 
-Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* require Go.
+Binary available for *Option 1*, *Option 2 & 3* require Python, *Option 4* require Go, *Option 6* require Rust.
 
 ## Basic Functionality
 
@@ -164,6 +169,9 @@ Try object storage in some applications: [zfile](https://github.com/zhaojun1998/
     * COSBench: A Benchmark Tool for Cloud Object Storage Services <http://www.cs.cmu.edu/~qingzhen/files/cosbench_cloud12.pdf>
     * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
+* Option 4: **s3-bench-rs** <https://github.com/SKTT1Ryze/s3-bench-rs> or <https://github.com/cs-course/obs-tutorial-rs>. 
+    * User Guide: todo
+    * Examples: todo
 
 ## Observation
 
