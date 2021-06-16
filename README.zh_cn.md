@@ -176,8 +176,8 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
         * COSBench: A benchmark tool for Cloud Storage <https://www.snia.org/sites/default/files/files2/files2/SDC2013/presentations/Cloud/YaguangWang__COSBench_Final.pdf>
 
 * 选项 4: **s3-bench-rs** <https://github.com/SKTT1Ryze/s3-bench-rs> 或者 <https://github.com/cs-course/obs-tutorial-rs>
-    * 指南: todo
-    * 范例: todo
+    * 指南: <https://github.com/cs-course/obs-tutorial-rs/blob/main/README.md>
+    * 范例: <https://github.com/cs-course/obs-tutorial-rs/tree/main/benches>
 ## 标准测试
 
 指标：*吞吐率Throughput*、*延迟Latency*，以及环境参数：*对象尺寸object size*、*并发性*、*服务器数量*。
