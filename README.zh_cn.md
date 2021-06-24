@@ -19,11 +19,7 @@
 
 Git tutorial <https://github.com/cs-course/git-tutorial>
 
-替代方案
-
-- [bitbucket](https://bitbucket.org/)
-- [gitlab](https://about.gitlab.com/)
-- [码云](https://gitee.com/)
+替代方案: [码云](https://gitee.com/), [bitbucket](https://bitbucket.org/), [gitlab](https://about.gitlab.com/)
 
 ### Python怎么搞定
 
