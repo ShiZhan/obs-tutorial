@@ -32,7 +32,7 @@ def request_timing(i):
     # 上传obj
     obj_name = "testObj%3d"%(i,)
     local_file = 'README.md'
-    temp_file = '.tempfile'
+    # temp_file = '.tempfile'
     service_time = 0
     start = time.time()
     s3.Object(bucket_name, obj_name).upload_file(local_file)

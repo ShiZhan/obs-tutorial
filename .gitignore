@@ -6,3 +6,4 @@ osm.conf
 config.json
 certs/
 root/
+.vscode/
