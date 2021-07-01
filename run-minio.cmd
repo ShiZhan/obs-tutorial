@@ -1,8 +1,8 @@
 @echo off
 
-@rem Use environment variables MINIO_ACCESS_KEY & MINIO_SECRET_KEY to set keys, for later use in clients.
-set MINIO_ACCESS_KEY=hust
-set MINIO_SECRET_KEY=hust_obs
+@rem Use environment variables MINIO_ROOT_USER & MINIO_ROOT_PASSWORD to set keys, for later use in clients.
+set MINIO_ROOT_USER=hust
+set MINIO_ROOT_PASSWORD=hust_obs
 
 @rem Export metrics
 set MINIO_PROMETHEUS_AUTH_TYPE=public
@@ -12,4 +12,4 @@ set MINIO_PROMETHEUS_AUTH_TYPE=public
 minio.exe -C ./ server ./root
 
 @rem Run above task in one command line.
-@rem set MINIO_ACCESS_KEY=hust& set MINIO_SECRET_KEY=hust_obs& minio.exe -C ./ server ./root
+@rem set MINIO_ROOT_USER=hust& set MINIO_ROOT_PASSWORD=hust_obs& minio.exe -S ./certs server ./root

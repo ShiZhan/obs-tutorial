@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Use environment variables MINIO_ACCESS_KEY & MINIO_SECRET_KEY to set keys, for later use in clients.
-export MINIO_ACCESS_KEY=hust
-export MINIO_SECRET_KEY=hust_obs
+# Use environment variables MINIO_ROOT_USER & MINIO_ROOT_PASSWORD to set keys, for later use in clients.
+export MINIO_ROOT_USER=hust
+export MINIO_ROOT_PASSWORD=hust_obs
 
 # Export metrics
 export MINIO_PROMETHEUS_AUTH_TYPE="public"
@@ -12,4 +12,4 @@ export MINIO_PROMETHEUS_AUTH_TYPE="public"
 ./minio -C ./ server ./root
 
 # Run above task in one command line.
-# export MINIO_ACCESS_KEY=hust && export MINIO_SECRET_KEY=hust_obs && ./minio -C ./ server ./root
+# export MINIO_ROOT_USER=hust && export MINIO_ROOT_PASSWORD=hust_obs && ./minio -C ./ server ./root
