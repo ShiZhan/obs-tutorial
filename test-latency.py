@@ -30,7 +30,7 @@ for obj in bucket.objects.all():
 # 发起请求和计算系统停留时间
 def request_timing(i):
     # 上传obj
-    obj_name = "testObj%3d"%(i,)
+    obj_name = "testObj%03d"%(i,)
     local_file = 'README.md'
     # temp_file = '.tempfile'
     service_time = 0
@@ -59,7 +59,7 @@ def arrival_rate_64(i):
 
 # 按照前述间隔连续发起请求
 latency = []
-for i in range(200):
+for i in range(100):
     # 上传obj
     st = arrival_rate_64(i)
     succ = not st is throttle.fail
@@ -68,17 +68,17 @@ for i in range(200):
         # print(st)
         latency.append(st)
 
-# 删除bucket下所有object
-bucket.objects.filter().delete()
-
-# 删除bucket下某个object
-# bucket.objects.filter(Prefix=obj_name).delete()
-
 # 删除bucket(只能删除空的bucket)
 try:
+    # 删除bucket下所有object
+    bucket.objects.filter().delete()
+
+    # 删除bucket下某个object
+    # bucket.objects.filter(Prefix=obj_name).delete()
+
     bucket.delete()
 except botocore.exceptions.ClientError as e:
-    print('bucket is not empty')
+    print('error in bucket removal')
 
 # 绘图
 import matplotlib.pyplot as plt
