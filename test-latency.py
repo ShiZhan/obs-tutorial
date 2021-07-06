@@ -42,7 +42,7 @@ def request_timing(i):
     # s3.Object(bucket_name, obj_name).download_file(temp_file)
     end = time.time()
     system_time = end - start
-    return system_time
+    return system_time * 1000 # 换算为毫秒
 
 # 按照请求到达率限制来执行和跟踪请求
 @throttle.wrap(1, 16)
@@ -83,7 +83,7 @@ except botocore.exceptions.ClientError as e:
 # 绘图
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
-from matplotlib.pyplot import MultipleLocator, show
+from matplotlib.pyplot import MultipleLocator
 
 plt.subplot(211)
 plt.plot(latency)
@@ -94,13 +94,12 @@ plt.show()
 def to_percent(y, position):
     return str(100 * round(y, 2)) + "%"
 
-latency_ms = [ l * 1000 for l in latency ]
-latency_ms_max = max(latency_ms)
-plt.hist(latency_ms, cumulative=True, histtype='step', weights=[1./ len(latency_ms)] * len(latency_ms))
+latency_max = max(latency)
+plt.hist(latency, cumulative=True, histtype='step', weights=[1./ len(latency)] * len(latency))
 fomatter = FuncFormatter(to_percent)
 ax = plt.gca()
 ax.xaxis.set_major_locator(MultipleLocator(5))
 ax.yaxis.set_major_formatter(fomatter)
-plt.xlim(0, latency_ms_max)
+plt.xlim(0, latency_max)
 plt.grid()
 plt.show()
