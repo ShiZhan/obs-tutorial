@@ -94,12 +94,12 @@ plt.show()
 def to_percent(y, position):
     return str(100 * round(y, 2)) + "%"
 
-latency_max = max(latency)
 plt.hist(latency, cumulative=True, histtype='step', weights=[1./ len(latency)] * len(latency))
 fomatter = FuncFormatter(to_percent)
 ax = plt.gca()
-ax.xaxis.set_major_locator(MultipleLocator(5))
+# ax.xaxis.set_major_locator(MultipleLocator(5))
 ax.yaxis.set_major_formatter(fomatter)
-plt.xlim(0, latency_max)
+x_start = max(min(latency) * 0.8, min(latency) - 5)
+plt.xlim(x_start, max(latency))
 plt.grid()
 plt.show()
