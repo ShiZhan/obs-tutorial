@@ -45,27 +45,26 @@ def request_timing(i):
     return system_time * 1000 # 换算为毫秒
 
 # 按照请求到达率限制来执行和跟踪请求
-@throttle.wrap(1, 16)
-def arrival_rate_16(i):
+@throttle.wrap(0.1, 2) # 100ms 2 个
+def arrival_rate_2(i):
     return request_timing(i)
 
-@throttle.wrap(1, 32)
-def arrival_rate_32(i):
+@throttle.wrap(0.1, 4)
+def arrival_rate_4(i):
     return request_timing(i)
 
-@throttle.wrap(1, 64)
-def arrival_rate_64(i):
+@throttle.wrap(0.1, 8)
+def arrival_rate_8(i):
     return request_timing(i)
 
 # 按照前述间隔连续发起请求
 latency = []
 for i in range(100):
     # 上传obj
-    st = arrival_rate_64(i)
+    st = arrival_rate_8(i)
     succ = not st is throttle.fail
     print(succ, st)
-    if not st is throttle.fail:
-        # print(st)
+    if succ:
         latency.append(st)
 
 # 删除bucket(只能删除空的bucket)
@@ -83,7 +82,7 @@ except botocore.exceptions.ClientError as e:
 # 绘图
 import matplotlib.pyplot as plt
 from matplotlib.ticker import FuncFormatter
-from matplotlib.pyplot import MultipleLocator
+from matplotlib.pyplot import MultipleLocator, plot
 
 plt.subplot(211)
 plt.plot(latency)
@@ -91,6 +90,16 @@ plt.subplot(212)
 plt.plot(sorted(latency, reverse=True))
 plt.show()
 
+# 排队论模型
+import numpy as np
+
+# F(t)=1-e^(-1*a*t)
+alpha = 0.3
+X_qt = np.arange(min(latency), max(latency), 1.)
+Y_qt = 1 - np.exp(alpha * (min(latency) - X_qt))
+plt.plot(X_qt, Y_qt)
+
+# 百分比换算
 def to_percent(y, position):
     return str(100 * round(y, 2)) + "%"
 
@@ -99,7 +108,8 @@ fomatter = FuncFormatter(to_percent)
 ax = plt.gca()
 # ax.xaxis.set_major_locator(MultipleLocator(5))
 ax.yaxis.set_major_formatter(fomatter)
-x_start = max(min(latency) * 0.8, min(latency) - 5)
-plt.xlim(x_start, max(latency))
+x_min = max(min(latency) * 0.8, min(latency) - 5)
+x_max = max(latency)
+plt.xlim(x_min, x_max)
 plt.grid()
 plt.show()
