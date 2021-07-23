@@ -30,7 +30,7 @@ for obj in bucket.objects.all():
 # 发起请求和计算系统停留时间
 def request_timing(i):
     # 上传obj
-    obj_name = "testObj%03d"%(i,)
+    obj_name = "testObj%08d"%(i,)
     local_file = 'README.md'
     # temp_file = '.tempfile'
     service_time = 0
@@ -59,7 +59,7 @@ def arrival_rate_8(i):
 
 # 按照前述间隔连续发起请求
 latency = []
-for i in range(100):
+for i in range(2000):
     # 上传obj
     st = arrival_rate_8(i)
     succ = not st is throttle.fail
@@ -79,37 +79,9 @@ try:
 except botocore.exceptions.ClientError as e:
     print('error in bucket removal')
 
-# 绘图
-import matplotlib.pyplot as plt
-from matplotlib.ticker import FuncFormatter
-from matplotlib.pyplot import MultipleLocator, plot
+# 记录延迟
 
-plt.subplot(211)
-plt.plot(latency)
-plt.subplot(212)
-plt.plot(sorted(latency, reverse=True))
-plt.show()
+with open("latency.csv", "w+") as tracefile:
+    tracefile.write("latency\n")
+    tracefile.writelines([str(l) + '\n' for l in latency])
 
-# 排队论模型
-import numpy as np
-
-# F(t)=1-e^(-1*a*t)
-alpha = 0.3
-X_qt = np.arange(min(latency), max(latency), 1.)
-Y_qt = 1 - np.exp(alpha * (min(latency) - X_qt))
-plt.plot(X_qt, Y_qt)
-
-# 百分比换算
-def to_percent(y, position):
-    return str(100 * round(y, 2)) + "%"
-
-plt.hist(latency, cumulative=True, histtype='step', weights=[1./ len(latency)] * len(latency))
-fomatter = FuncFormatter(to_percent)
-ax = plt.gca()
-# ax.xaxis.set_major_locator(MultipleLocator(5))
-ax.yaxis.set_major_formatter(fomatter)
-x_min = max(min(latency) * 0.8, min(latency) - 5)
-x_max = max(latency)
-plt.xlim(x_min, x_max)
-plt.grid()
-plt.show()
