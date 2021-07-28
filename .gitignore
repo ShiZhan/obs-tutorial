@@ -1,4 +1,5 @@
 *.exe
+*.csv
 minio
 osm
 s3bench
