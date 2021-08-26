@@ -45,6 +45,9 @@ def request_timing(i):
     return system_time * 1000 # 换算为毫秒
 
 # 按照请求到达率限制来执行和跟踪请求
+def arrival_rate_max(i): # unlimited
+    return request_timing(i)
+
 @throttle.wrap(0.1, 2) # 100ms 2 个
 def arrival_rate_2(i):
     return request_timing(i)
@@ -59,9 +62,9 @@ def arrival_rate_8(i):
 
 # 按照前述间隔连续发起请求
 latency = []
-for i in range(2000):
+for i in range(100):
     # 上传obj
-    st = arrival_rate_8(i)
+    st = arrival_rate_max(i)
     succ = not st is throttle.fail
     print(succ, st)
     if succ:
