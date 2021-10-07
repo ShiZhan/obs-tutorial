@@ -201,15 +201,15 @@ More insights are encouraged.
 
 ## Lab3: Tail Latency Challenge
 
-### Prediction
+### How to handle?
 
-Start from queueing Theory
+* Hedged request
+* Tied request
 
-### Solution
+### How to predict?
 
-Repeat
-
-Replica
+* queueing Theory
+* Sequence prediction
 
 ## Experiences and Problems
 
