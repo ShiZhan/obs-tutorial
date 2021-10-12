@@ -194,14 +194,15 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
   * 首先要采集全面的 I/O 延迟观测数据。
   * 百分位延迟观测需使用s3bench，然后即可分析尾延迟影响因素。
 * 如果客户端爆满将怎样?
-* 测试项为何出现 '**fail**'? (不是 terminate)
+  * 请求并发数如何同时影响延迟分布和吞吐率？如何保障服务质量？
 * 横向扩展系统 (Scaling Out) 效果如何 (向系统中追加更多存储服务器)?
 
 不限于上述内容，鼓励更丰富思考。
 
 ### 更进一步
 
-* 前述实验如何自己编程实现 (不借助于 COSBench、s3bench)?
+* 前述实验如何自己编程实现?
+  * 不借助于 COSBench、s3bench，使用aws-sdk或boto3。
 * 把 Python 当作自己的实验台
   * Jupyter Notebook Tutorial <https://github.com/cs-course/jupyter-tutorial>
 

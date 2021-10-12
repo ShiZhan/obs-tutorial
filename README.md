@@ -188,14 +188,15 @@ Try object storage in some applications: [zfile](https://github.com/zhaojun1998/
   * Get latency distribution first.
   * For evaluating percentile latency, s3bench is recommended.
 * What will happen when clients are crowded?
-* Why tests '**fail**'? (not terminate)
+  * How concurrency affects latency distribution and throughput? How to enforce SLA by controlling?
 * The outcome of scaling out (putting more servers into system)?
 
 More insights are encouraged.
 
 ### Further thoughts
 
-* How to do these experiments on your own codes (besides COSBench)?
+* How to do these experiments on your own codes
+  * besides COSBench, s3bench, use aws-sdk or boto3 instead.
 * Using Python as Lab Platform
   * Jupyter Notebook Tutorial <https://github.com/cs-course/jupyter-tutorial>
 
