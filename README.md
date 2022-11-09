@@ -125,7 +125,7 @@ Try object storage in some applications: [zfile](https://github.com/zhaojun1998/
         ```
 
     * Linux: default location for built binary is `~/go/bin/s3bench`
-    * [Prebuilt Windows binary](https://share.weiyun.com/BICMfA4G), download and put into this directory.
+    * [Prebuilt Windows binary](https://share.weiyun.com/8HdZMhlc), download and put into this directory.
 
   * Command line example
 

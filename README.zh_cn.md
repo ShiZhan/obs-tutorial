@@ -131,7 +131,7 @@ Git tutorial <https://github.com/cs-course/git-tutorial>
     ```
 
     * Linux: 编译文件缺省位置在 `~/go/bin/s3bench`
-    * [预编译Windows执行程序](https://share.weiyun.com/BICMfA4G)，需下载放置在本资料库所在目录中。
+    * [预编译Windows执行程序](https://share.weiyun.com/8HdZMhlc)，需下载放置在本资料库所在目录中。
 
   * 命令行范例
 
