@@ -7,6 +7,7 @@ import numpy as np
 from scipy.special import factorial
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button
+from matplotlib.ticker import FuncFormatter
 
 # *泊松分布*
 
@@ -64,14 +65,26 @@ button1.on_clicked(reset1)
 def queueing_model(x, λ, μ):
     return 1 - np.exp(-1*(μ-λ)*x)
 
+def percentile(x, λ, μ):
+    return -1 * np.log(1-x) / (μ-λ)
+
 x2 = np.linspace(0, 10, 100)
 
 init_λ = 10
 init_μ = 15
 
+def to_percent(y, position):
+    return str(100 * round(y, 2)) + "%"
+
+fomatter = FuncFormatter(to_percent)
+
 fig2, ax2 = plt.subplots()
 line2, = ax2.plot(x2, queueing_model(x2, init_λ, init_μ), lw=2)
 ax2.set_xlabel('latency')
+ax2.set_xticks(np.linspace(0, 10, 11))
+ax2.set_xticks(np.linspace(0, 10, 21), minor=True)
+plt.grid(which='both', alpha=0.3)
+ax2.yaxis.set_major_formatter(fomatter)
 
 fig2.subplots_adjust(bottom=0.25)
 
