@@ -7,7 +7,7 @@ import numpy as np
 from scipy.special import factorial
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button
-from matplotlib.ticker import FuncFormatter
+from matplotlib.ticker import PercentFormatter
 
 # *泊松分布*
 
@@ -31,7 +31,7 @@ ax1.set_xlabel('arrival speed')
 fig1.subplots_adjust(bottom=0.25)
 
 # 设置请求到达率滑动条
-ax_arrival_rate = fig1.add_axes([0.1, 0.1, 0.5, 0.03])
+ax_arrival_rate = fig1.add_axes([0.2, 0.1, 0.5, 0.03])
 slider_arrival_rate = Slider(
     ax=ax_arrival_rate,
     label='arrival rate',
@@ -71,20 +71,16 @@ def percentile(x, λ, μ):
 x2 = np.linspace(0, 10, 100)
 
 init_λ = 10
-init_μ = 15
-
-def to_percent(y, position):
-    return str(100 * round(y, 2)) + "%"
-
-fomatter = FuncFormatter(to_percent)
+init_μ = 20
 
 fig2, ax2 = plt.subplots()
 line2, = ax2.plot(x2, queueing_model(x2, init_λ, init_μ), lw=2)
 ax2.set_xlabel('latency')
 ax2.set_xticks(np.linspace(0, 10, 11))
 ax2.set_xticks(np.linspace(0, 10, 21), minor=True)
-plt.grid(which='both', alpha=0.3)
-ax2.yaxis.set_major_formatter(fomatter)
+ax2.grid(which='both', alpha=0.3)
+ax2.yaxis.set_major_formatter(PercentFormatter(xmax=1, decimals=1))
+ax2.annotate('P50', xy=(0.1, 0.5), xycoords='data', xytext=(+0.2, -0.5), textcoords='offset points')
 
 fig2.subplots_adjust(bottom=0.25)
 
@@ -110,6 +106,7 @@ fig2.subplots_adjust(bottom=0.25)
 
 def update2(val):
     line2.set_ydata(queueing_model(x2, λ_slider.val, μ_slider.val))
+    fig2.annotate('P50', xy=(0.1, 0.5), xycoords='data', xytext=(+0.2, -0.5), textcoords='offset points')
     fig2.canvas.draw_idle()
 
 λ_slider.on_changed(update2)
