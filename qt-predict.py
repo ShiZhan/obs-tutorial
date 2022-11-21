@@ -80,7 +80,10 @@ ax2.set_xticks(np.linspace(0, 10, 11))
 ax2.set_xticks(np.linspace(0, 10, 21), minor=True)
 ax2.grid(which='both', alpha=0.3)
 ax2.yaxis.set_major_formatter(PercentFormatter(xmax=1, decimals=1))
-ax2.annotate('P50', xy=(0.1, 0.5), xycoords='data', xytext=(+0.2, -0.5), textcoords='offset points')
+ax2.annotate('P50',
+    xy=(0.1, 0.5), xycoords='data',
+    xytext=(1.0, 0.5), textcoords='data',
+    arrowprops=dict(arrowstyle='->',connectionstyle='arc3,rad=.2'))
 
 fig2.subplots_adjust(bottom=0.25)
 
@@ -106,7 +109,10 @@ fig2.subplots_adjust(bottom=0.25)
 
 def update2(val):
     line2.set_ydata(queueing_model(x2, λ_slider.val, μ_slider.val))
-    fig2.annotate('P50', xy=(0.1, 0.5), xycoords='data', xytext=(+0.2, -0.5), textcoords='offset points')
+    ax2.annotate('P50',
+        xy=(0.1, 0.5), xycoords='data',
+        xytext=(1.0, 0.5), textcoords='data',
+        arrowprops=dict(arrowstyle='->',connectionstyle='arc3,rad=.2'))
     fig2.canvas.draw_idle()
 
 λ_slider.on_changed(update2)
