@@ -80,10 +80,6 @@ ax2.set_xticks(np.linspace(0, 10, 11))
 ax2.set_xticks(np.linspace(0, 10, 21), minor=True)
 ax2.grid(which='both', alpha=0.3)
 ax2.yaxis.set_major_formatter(PercentFormatter(xmax=1, decimals=1))
-ax2.annotate('P50',
-    xy=(0.1, 0.5), xycoords='data',
-    xytext=(1.0, 0.5), textcoords='data',
-    arrowprops=dict(arrowstyle='->',connectionstyle='arc3,rad=.2'))
 
 fig2.subplots_adjust(bottom=0.25)
 
@@ -107,16 +103,12 @@ fig2.subplots_adjust(bottom=0.25)
     valinit=init_μ,
 )
 
-def update2(val):
+def update_λ_μ(val):
     line2.set_ydata(queueing_model(x2, λ_slider.val, μ_slider.val))
-    ax2.annotate('P50',
-        xy=(0.1, 0.5), xycoords='data',
-        xytext=(1.0, 0.5), textcoords='data',
-        arrowprops=dict(arrowstyle='->',connectionstyle='arc3,rad=.2'))
     fig2.canvas.draw_idle()
 
-λ_slider.on_changed(update2)
-μ_slider.on_changed(update2)
+λ_slider.on_changed(update_λ_μ)
+μ_slider.on_changed(update_λ_μ)
 
 # λ重置按钮
 resetax2 = fig2.add_axes([0.8, 0.025, 0.1, 0.04])
@@ -127,5 +119,20 @@ def reset2(event):
     μ_slider.reset()
 
 button2.on_clicked(reset2)
+
+# 标记百分位延迟
+
+def update_percentile(val):
+    x_avg = 1/(μ_slider.val-λ_slider.val)
+    ax2.annotate(r'$Average: %.2f$'%x_avg,
+        xy=(x_avg, 0.6), xycoords='data',
+        xytext=(0.5, 0.6), textcoords='data',
+        arrowprops=dict(arrowstyle='->',connectionstyle='arc3,rad=.2'))
+
+    x_p50 = -(1-np.log(1-0.5))/(μ_slider.val-λ_slider.val)
+    ax2.annotate(r'$P50: %.2f$'%x_p50,
+        xy=(x_p50, 0.5), xycoords='data',
+        xytext=(0.5, 0.5), textcoords='data',
+        arrowprops=dict(arrowstyle='->',connectionstyle='arc3,rad=.2'))
 
 plt.show()
