@@ -45,8 +45,6 @@ slider_arrival_rate = Slider(
 def update1(val):
     line1.set_ydata(arrival(x1, slider_arrival_rate.val))
     fig1.canvas.draw_idle()
-    line2.set_ydata(np.exp(-x2))
-    fig2.canvas.draw_idle()
 
 # 注册参数刷新函数
 slider_arrival_rate.on_changed(update1)
