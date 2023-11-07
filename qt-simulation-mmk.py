@@ -1,58 +1,72 @@
-import argparse
+import simpy
+import random
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.ticker import PercentFormatter
-import time
-import random
+import argparse
 
-def mmk_simulation(lambda_param, mu, R, k):
-    # 初始化队列和服务时间列表
-    queue = []
-    latency = []
+def handler(env, name, server, service_time, latencies):
+    """顾客进程"""
+    arrive_time = env.now
+    print(f"{name} arrives at time {arrive_time:.2f}")
+    
+    with server.request() as req:
+        yield req
+        
+        start_service_time = env.now
+        print(f"{name} starts being handled at time {start_service_time:.2f}")
+        
+        yield env.timeout(service_time)
+        
+        end_service_time = env.now
+        latency = end_service_time - arrive_time
+        print(f"{name} finishes at time {end_service_time:.2f}, total service time: {latency:.2f}")
+        
+        # record request latency in latencies list
+        latencies.append(latency)
 
-    # 开始仿真
-    for i in range(R):
-        # 根据到达率计算请求到达时间
-        arrival_time = np.random.exponential(1/lambda_param)
-        time.sleep(arrival_time)
-
-        # 请求到达，加入队列
-        queue.append(i)
-
-        # 如果服务台空闲，开始服务
-        if len(queue) <= k:
-            start_time = time.time()
-            service_time = np.random.exponential(1/mu)
-            time.sleep(service_time)
-            end_time = time.time()
-            latency.append(end_time - start_time)
-            queue.pop(0)
-        else:
-            # 如果队列过长，等待服务
-            start_time = time.time()
-            while len(queue) > k:
-                time.sleep(0.01)
-            service_time = np.random.exponential(1/mu)
-            time.sleep(service_time)
-            end_time = time.time()
-            latency.append(end_time - start_time)
-            queue.pop(0)
-
-    return latency
-
+def simulate(λ, μ, r, latencies, server):
+    """模拟函数"""
+    for i in range(r):
+        service_time = random.expovariate(μ)
+        env.process(handler(env, f"REQUEST {i+1}", server, service_time, latencies))
+        
+        inter_arrival_time = random.expovariate(λ)
+        yield env.timeout(inter_arrival_time)
+    
+    yield env.timeout(0)  # 等待所有请求完成
+    
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-a", "--arrival", type=float, default=9, help="请求到达率λ")
-    parser.add_argument("-m", "--mu", type=float, default=10, help="服务速率μ")
-    parser.add_argument("-r", "--requests", type=int, default=10, help="总请求数R")
-    parser.add_argument("-k", "--servers", type=int, default=1, help="服务台数k")
+    parser.add_argument("-l", "--lamda", type=float, default=9, help="Arrival rate (default: 9)")
+    parser.add_argument("-m", "--mu", type=float, default=10, help="Service rate (default: 10)")
+    parser.add_argument("-k", "--servers", type=int, default=1, help="Number of servers (default: 1)")
+    parser.add_argument("-r", "--requests", type=int, default=100, help="Number of requests to simulate (default: 100)")
     args = parser.parse_args()
 
-    latency = mmk_simulation(args.arrival, args.mu, args.requests, args.servers)
+    latencies = []
+    random.seed(42)
 
+    env = simpy.Environment()
+    server = simpy.Resource(env, capacity=args.requests)
+
+    env.process(simulate(args.lamda, args.mu, args.requests, latencies, server))
+    env.run()
+
+    """绘制累计概率分布图"""
     ax = plt.gca()
     ax.yaxis.set_major_formatter(PercentFormatter(xmax=1, decimals=1))
-    plt.xlim(0, max(latency))
-    plt.hist(latency, cumulative=True, histtype='step', weights=[1./ len(latency)] * len(latency))
+
+    plt.xlim(0, max(latencies))
+    plt.hist(latencies, cumulative=True, histtype='step', weights=[1./ len(latencies)] * len(latencies))
+
+    # 排队论模型
+    # F(t)=1-e^(-1*a*t)
+    μ_λ = args.mu - args.lamda
+    X_qt = np.arange(0, max(latencies), .01)
+    Y_qt = 1 - np.exp(-1 * μ_λ * X_qt)
+    # 绘制排队论模型拟合
+    plt.plot(X_qt, Y_qt)
+
     plt.grid()
     plt.show()
