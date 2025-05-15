@@ -53,6 +53,12 @@ if __name__ == "__main__":
     env.process(simulate(args.lamda, args.mu, args.requests, latencies, server))
     env.run()
 
+    # Save latencies to a CSV file
+    with open('latencies.csv', 'w', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        writer.writerow(['Latency'])  # Write header
+        writer.writerows([[latency] for latency in latencies])  # Write data
+
     """绘制累计概率分布图"""
     ax = plt.gca()
     ax.yaxis.set_major_formatter(PercentFormatter(xmax=1, decimals=1))
