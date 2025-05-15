@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.metrics import mean_squared_error
 
 # Load latencies data from CSV
-latencies = pd.read_csv('latencies.csv')['Latency'].values
+latencies = pd.read_csv('latency.csv', header=None).values.flatten()
 
 # Split data into training and testing sets
 train_size = int(len(latencies) * 0.8)
@@ -35,12 +35,15 @@ seq_length = 10  # Sequence length for RNN models
 X_train, y_train = create_sequences(train, seq_length)
 X_test, y_test = create_sequences(test, seq_length)
 
-# Normalize data
-scaler = MinMaxScaler()
-X_train = scaler.fit_transform(X_train)
-X_test = scaler.transform(X_test)
-y_train = scaler.transform(y_train.reshape(-1, 1)).flatten()
-y_test = scaler.transform(y_test.reshape(-1, 1)).flatten()
+# Normalize input features (X)
+scaler_X = MinMaxScaler()
+X_train = scaler_X.fit_transform(X_train)
+X_test = scaler_X.transform(X_test)
+
+# Normalize target (y) separately
+scaler_y = MinMaxScaler()
+y_train = scaler_y.fit_transform(y_train.reshape(-1, 1)).flatten()
+y_test = scaler_y.transform(y_test.reshape(-1, 1)).flatten()
 
 # Convert to PyTorch tensors
 X_train = torch.tensor(X_train, dtype=torch.float32).unsqueeze(-1)
@@ -118,8 +121,8 @@ lstm_predictions, _ = evaluate_model(lstm_model, test_loader)
 arima_predictions = arima_predict(train, test)
 
 # Inverse transform predictions
-gru_predictions = scaler.inverse_transform(gru_predictions.reshape(-1, 1)).flatten()
-lstm_predictions = scaler.inverse_transform(lstm_predictions.reshape(-1, 1)).flatten()
+gru_predictions = scaler_y.inverse_transform(gru_predictions.reshape(-1, 1)).flatten()
+lstm_predictions = scaler_y.inverse_transform(lstm_predictions.reshape(-1, 1)).flatten()
 arima_predictions = arima_predictions  # ARIMA predictions are already in the original scale
 
 # Plot results
