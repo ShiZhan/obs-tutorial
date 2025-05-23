@@ -11,9 +11,29 @@ from sklearn.metrics import mean_squared_error
 # Load latencies data from CSV
 latencies = pd.read_csv('latency.csv', header=None).values.flatten()
 
+# Simulate timeline
+timeline = []
+current_time = 0
+for latency in latencies:
+    current_time += latency
+    timeline.append(current_time)
+
+# Define bin size (10 ms)
+bin_size = 10
+
+# Create bins
+max_time = max(timeline)
+bins = np.arange(0, max_time + bin_size, bin_size)
+
+# Count requests in each bin
+request_counts, _ = np.histogram(timeline, bins=bins)
+
+# Now `request_counts` is the time series you can use for prediction
+print(request_counts)
+
 # Split data into training and testing sets
-train_size = int(len(latencies) * 0.8)
-train, test = latencies[:train_size], latencies[train_size:]
+train_size = int(len(request_counts) * 0.8)
+train, test = request_counts[:train_size], request_counts[train_size:]
 
 # Function to create sequences for RNN models
 def create_sequences(data, seq_length):
@@ -47,9 +67,9 @@ y_test = scaler_y.transform(y_test.reshape(-1, 1)).flatten()
 
 # Convert to PyTorch tensors
 X_train = torch.tensor(X_train, dtype=torch.float32).unsqueeze(-1)
-y_train = torch.tensor(y_train, dtype=torch.float32)
+y_train = torch.tensor(y_train, dtype=torch.float32).unsqueeze(-1)
 X_test = torch.tensor(X_test, dtype=torch.float32).unsqueeze(-1)
-y_test = torch.tensor(y_test, dtype=torch.float32)
+y_test = torch.tensor(y_test, dtype=torch.float32).unsqueeze(-1)
 
 # Create DataLoader
 train_dataset = TensorDataset(X_train, y_train)
@@ -127,12 +147,12 @@ arima_predictions = arima_predictions  # ARIMA predictions are already in the or
 
 # Plot results
 plt.figure(figsize=(12, 6))
-plt.plot(test, label="Actual Latencies", color="black")
+plt.plot(test, label="Actual Arriving Rate", color="black")
 plt.plot(arima_predictions, label="ARIMA Predictions", linestyle="--")
 plt.plot(gru_predictions, label="GRU Predictions", linestyle="-.")
 plt.plot(lstm_predictions, label="LSTM Predictions", linestyle=":")
 plt.xlabel("Time")
-plt.ylabel("Latency")
+plt.ylabel("Arriving Rate")
 plt.title("Comparison of ARIMA, GRU, and LSTM Predictions")
 plt.legend()
 plt.grid()
