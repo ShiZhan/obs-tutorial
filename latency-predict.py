@@ -9,7 +9,7 @@ from torch.utils.data import DataLoader, TensorDataset
 from sklearn.metrics import mean_squared_error
 
 # Load latencies data from CSV
-latencies = pd.read_csv('latency.csv', header=None).values.flatten()
+latencies = pd.read_csv('latency.csv', header=0).values.flatten()
 
 # Simulate timeline
 timeline = []
@@ -19,7 +19,7 @@ for latency in latencies:
     timeline.append(current_time)
 
 # Define bin size (10 ms)
-bin_size = 10
+bin_size = 0.01
 
 # Create bins
 max_time = max(timeline)
